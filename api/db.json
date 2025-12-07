@@ -1,0 +1,2079 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "admin@colegio.com",
+      "password": "123456",
+      "role": "ADMIN",
+      "name": "Administrador"
+    },
+    {
+      "id": "u-t01",
+      "email": "maria.torres@ieprimaria.com",
+      "password": "30112233",
+      "role": "DOCENTE",
+      "name": "Maria Torres",
+      "teacherDni": "30112233"
+    },
+    {
+      "id": "u-t02",
+      "email": "luis.ramirez@ieprimaria.com",
+      "password": "31223344",
+      "role": "DOCENTE",
+      "name": "Luis Ramirez",
+      "teacherDni": "31223344"
+    },
+    {
+      "id": "u-t03",
+      "email": "ana.paredes@ieprimaria.com",
+      "password": "32334455",
+      "role": "DOCENTE",
+      "name": "Ana Paredes",
+      "teacherDni": "32334455"
+    },
+    {
+      "id": "u-t04",
+      "email": "jorge.salazar@ieprimaria.com",
+      "password": "33445566",
+      "role": "DOCENTE",
+      "name": "Jorge Salazar",
+      "teacherDni": "33445566"
+    },
+    {
+      "id": "u-t05",
+      "email": "carla.mejia@ieprimaria.com",
+      "password": "34556677",
+      "role": "DOCENTE",
+      "name": "Carla Mejia",
+      "teacherDni": "34556677"
+    }
+  ],
+  "students": [
+    {
+      "id": 1,
+      "dni": "40112233",
+      "name": "Valentina",
+      "lastname": "Rios",
+      "email": "familia.rios@correo.com",
+      "sex": "F",
+      "birthdate": "2015-03-05",
+      "age": 9,
+      "level": "Primaria",
+      "grade": 4,
+      "section": "A",
+      "shift": "MANANA",
+      "status": "ACTIVO"
+    },
+    {
+      "id": 2,
+      "dni": "40113344",
+      "name": "Sebastian",
+      "lastname": "Lopez",
+      "email": "familia.lopez@correo.com",
+      "sex": "M",
+      "birthdate": "2014-11-22",
+      "age": 10,
+      "level": "Primaria",
+      "grade": 5,
+      "section": "B",
+      "shift": "MANANA",
+      "status": "ACTIVO"
+    },
+    {
+      "id": 3,
+      "dni": "40114455",
+      "name": "Camila",
+      "lastname": "Flores",
+      "email": "familia.flores@correo.com",
+      "sex": "F",
+      "birthdate": "2015-08-10",
+      "age": 9,
+      "level": "Primaria",
+      "grade": 4,
+      "section": "A",
+      "shift": "MANANA",
+      "status": "ACTIVO"
+    },
+    {
+      "id": 4,
+      "dni": "40115566",
+      "name": "Mateo",
+      "lastname": "Castro",
+      "email": "familia.castro@correo.com",
+      "sex": "M",
+      "birthdate": "2014-06-30",
+      "age": 10,
+      "level": "Primaria",
+      "grade": 5,
+      "section": "B",
+      "shift": "TARDE",
+      "status": "ACTIVO"
+    },
+    {
+      "id": 5,
+      "dni": "40116677",
+      "name": "Luciana",
+      "lastname": "Garcia",
+      "email": "familia.garcia@correo.com",
+      "sex": "F",
+      "birthdate": "2015-01-18",
+      "age": 9,
+      "level": "Primaria",
+      "grade": 4,
+      "section": "A",
+      "shift": "MANANA",
+      "status": "ACTIVO"
+    },
+    {
+      "id": 7,
+      "dni": "40118899",
+      "name": "Isabella",
+      "lastname": "Silva",
+      "email": "familia.silva@correo.com",
+      "sex": "F",
+      "birthdate": "2015-05-25",
+      "age": 9,
+      "level": "Primaria",
+      "grade": 4,
+      "section": "A",
+      "shift": "MANANA",
+      "status": "ACTIVO"
+    },
+    {
+      "id": 10,
+      "dni": "40121122",
+      "name": "Santiago",
+      "lastname": "Dominguez",
+      "email": "familia.dominguez@correo.com",
+      "sex": "M",
+      "birthdate": "2014-12-02",
+      "age": 10,
+      "level": "Primaria",
+      "grade": 5,
+      "section": "B",
+      "shift": "MANANA",
+      "status": "ACTIVO"
+    }
+  ],
+  "teachers": [
+    {
+      "id": 1,
+      "dni": "30112233",
+      "name": "Maria",
+      "lastname": "Torres",
+      "email": "maria.torres@ieprimaria.com",
+      "sex": "F",
+      "birthdate": "1985-04-12",
+      "specialty": "Matematica",
+      "grade": 4,
+      "section": "A",
+      "role": "DOCENTE",
+      "status": "ACTIVO"
+    },
+    {
+      "id": 2,
+      "dni": "31223344",
+      "name": "Luis",
+      "lastname": "Ramirez",
+      "email": "luis.ramirez@ieprimaria.com",
+      "sex": "M",
+      "birthdate": "1982-09-03",
+      "specialty": "Comunicacion",
+      "grade": 4,
+      "section": "A",
+      "role": "DOCENTE",
+      "status": "ACTIVO"
+    },
+    {
+      "id": 3,
+      "dni": "32334455",
+      "name": "Ana",
+      "lastname": "Paredes",
+      "email": "ana.paredes@ieprimaria.com",
+      "sex": "F",
+      "birthdate": "1987-02-18",
+      "specialty": "Ciencia y Tecnologia",
+      "grade": 5,
+      "section": "B",
+      "role": "DOCENTE",
+      "status": "ACTIVO"
+    },
+    {
+      "id": 4,
+      "dni": "33445566",
+      "name": "Jorge",
+      "lastname": "Salazar",
+      "email": "jorge.salazar@ieprimaria.com",
+      "sex": "M",
+      "birthdate": "1980-07-27",
+      "specialty": "Ingles",
+      "grade": 5,
+      "section": "B",
+      "role": "DOCENTE",
+      "status": "ACTIVO"
+    },
+    {
+      "id": 5,
+      "dni": "34556677",
+      "name": "Carla",
+      "lastname": "Mejia",
+      "email": "carla.mejia@ieprimaria.com",
+      "sex": "F",
+      "birthdate": "1986-11-14",
+      "specialty": "Educacion Fisica",
+      "grade": 4,
+      "section": "A",
+      "role": "DOCENTE",
+      "status": "ACTIVO"
+    }
+  ],
+  "courses": [
+    {
+      "id": "matematica-primaria",
+      "name": "Matematica y Razonamiento",
+      "teacherDni": "30112233",
+      "status": "ACTIVO"
+    },
+    {
+      "id": "comunicacion-integral",
+      "name": "Comunicacion Integral",
+      "teacherDni": "31223344",
+      "status": "ACTIVO"
+    },
+    {
+      "id": "ciencia-tecnologia",
+      "name": "Ciencia y Tecnologia",
+      "teacherDni": "32334455",
+      "status": "ACTIVO"
+    },
+    {
+      "id": "ingles",
+      "name": "Ingles Basico",
+      "teacherDni": "33445566",
+      "status": "ACTIVO"
+    },
+    {
+      "id": "personal-social",
+      "name": "Personal Social",
+      "teacherDni": "31223344",
+      "status": "ACTIVO"
+    },
+    {
+      "id": "educacion-fisica",
+      "name": "Educacion Fisica",
+      "teacherDni": "34556677",
+      "status": "ACTIVO"
+    },
+    {
+      "id": "arte-musica",
+      "name": "Arte y Musica",
+      "teacherDni": "31223344",
+      "status": "ACTIVO"
+    }
+  ],
+  "grades": [
+    {
+      "studentDni": "40112233",
+      "courseId": "matematica-primaria",
+      "term": 1,
+      "evaluation": 1,
+      "score": 20,
+      "comment": "",
+      "id": "g1"
+    },
+    {
+      "studentDni": "40112233",
+      "courseId": "matematica-primaria",
+      "term": 1,
+      "evaluation": 2,
+      "score": 15,
+      "comment": "",
+      "id": "g2"
+    },
+    {
+      "studentDni": "40112233",
+      "courseId": "matematica-primaria",
+      "term": 1,
+      "evaluation": 3,
+      "score": 16,
+      "comment": "",
+      "id": "g3"
+    },
+    {
+      "studentDni": "40112233",
+      "courseId": "personal-social",
+      "term": 1,
+      "evaluation": 1,
+      "score": 20,
+      "comment": "",
+      "id": "g4"
+    },
+    {
+      "id": "g5",
+      "studentDni": "40113344",
+      "courseId": "comunicacion-integral",
+      "term": 1,
+      "evaluation": 1,
+      "score": 16
+    },
+    {
+      "id": "g6",
+      "studentDni": "40113344",
+      "courseId": "arte-musica",
+      "term": 1,
+      "evaluation": 1,
+      "score": 17
+    },
+    {
+      "id": "g7",
+      "studentDni": "40114455",
+      "courseId": "matematica-primaria",
+      "term": 1,
+      "evaluation": 1,
+      "score": 12
+    },
+    {
+      "id": "g8",
+      "studentDni": "40115566",
+      "courseId": "ciencia-tecnologia",
+      "term": 1,
+      "evaluation": 1,
+      "score": 14
+    },
+    {
+      "id": "g9",
+      "studentDni": "40115566",
+      "courseId": "personal-social",
+      "term": 1,
+      "evaluation": 1,
+      "score": 15
+    },
+    {
+      "id": "g10",
+      "studentDni": "40116677",
+      "courseId": "personal-social",
+      "term": 1,
+      "evaluation": 1,
+      "score": 16
+    },
+    {
+      "id": "g11",
+      "studentDni": "40118899",
+      "courseId": "arte-musica",
+      "term": 1,
+      "evaluation": 1,
+      "score": 13
+    },
+    {
+      "id": "g12",
+      "studentDni": "40119900",
+      "courseId": "comunicacion-integral",
+      "term": 1,
+      "evaluation": 1,
+      "score": 15
+    },
+    {
+      "id": "g13",
+      "studentDni": "40121122",
+      "courseId": "educacion-fisica",
+      "term": 1,
+      "evaluation": 1,
+      "score": 18
+    },
+    {
+      "studentDni": "40112233",
+      "courseId": "matematica-primaria",
+      "term": 2,
+      "evaluation": 1,
+      "score": 17,
+      "comment": "",
+      "id": "g14"
+    },
+    {
+      "id": "g15",
+      "studentDni": "40113344",
+      "courseId": "comunicacion-integral",
+      "term": 2,
+      "evaluation": 1,
+      "score": 15
+    },
+    {
+      "id": "g16",
+      "studentDni": "40114455",
+      "courseId": "matematica-primaria",
+      "term": 2,
+      "evaluation": 1,
+      "score": 14
+    },
+    {
+      "id": "g17",
+      "studentDni": "40115566",
+      "courseId": "ciencia-tecnologia",
+      "term": 2,
+      "evaluation": 1,
+      "score": 16
+    },
+    {
+      "id": "g18",
+      "studentDni": "40116677",
+      "courseId": "personal-social",
+      "term": 2,
+      "evaluation": 1,
+      "score": 17
+    },
+    {
+      "studentDni": "40112233",
+      "courseId": "matematica-primaria",
+      "term": 3,
+      "evaluation": 1,
+      "score": 18,
+      "comment": "",
+      "id": "g19"
+    },
+    {
+      "id": "g20",
+      "studentDni": "40113344",
+      "courseId": "comunicacion-integral",
+      "term": 3,
+      "evaluation": 1,
+      "score": 16
+    },
+    {
+      "id": "g21",
+      "studentDni": "40114455",
+      "courseId": "matematica-primaria",
+      "term": 3,
+      "evaluation": 1,
+      "score": 15
+    },
+    {
+      "id": "g22",
+      "studentDni": "40115566",
+      "courseId": "ciencia-tecnologia",
+      "term": 3,
+      "evaluation": 1,
+      "score": 17
+    },
+    {
+      "id": "g23",
+      "studentDni": "40116677",
+      "courseId": "personal-social",
+      "term": 3,
+      "evaluation": 1,
+      "score": 18
+    },
+    {
+      "studentDni": "40112233",
+      "courseId": "personal-social",
+      "term": 1,
+      "evaluation": 2,
+      "score": 20,
+      "comment": "",
+      "id": "aHosMGx"
+    },
+    {
+      "studentDni": "40112233",
+      "courseId": "matematica-primaria",
+      "term": 1,
+      "evaluation": 4,
+      "score": 10,
+      "comment": "",
+      "id": "olNIvZE"
+    },
+    {
+      "studentDni": "40112233",
+      "courseId": "personal-social",
+      "term": 1,
+      "evaluation": 3,
+      "score": 10,
+      "comment": "",
+      "id": "HDCTAqL"
+    },
+    {
+      "studentDni": "40112233",
+      "courseId": "personal-social",
+      "term": 1,
+      "evaluation": 4,
+      "score": 10,
+      "comment": "",
+      "id": "UGWFEGQ"
+    },
+    {
+      "studentDni": "40112233",
+      "courseId": "matematica-primaria",
+      "term": 2,
+      "evaluation": 2,
+      "score": 10,
+      "comment": "",
+      "id": "c9A-Hox"
+    },
+    {
+      "studentDni": "40112233",
+      "courseId": "matematica-primaria",
+      "term": 2,
+      "evaluation": 3,
+      "score": 10,
+      "comment": "",
+      "id": "w_55nlt"
+    },
+    {
+      "studentDni": "40112233",
+      "courseId": "matematica-primaria",
+      "term": 2,
+      "evaluation": 4,
+      "score": 10,
+      "comment": "",
+      "id": "VAAAuRl"
+    },
+    {
+      "studentDni": "40112233",
+      "courseId": "personal-social",
+      "term": 2,
+      "evaluation": 1,
+      "score": 10,
+      "comment": "",
+      "id": "apvmxO0"
+    },
+    {
+      "studentDni": "40112233",
+      "courseId": "personal-social",
+      "term": 2,
+      "evaluation": 2,
+      "score": 10,
+      "comment": "",
+      "id": "TgDdc3T"
+    },
+    {
+      "studentDni": "40112233",
+      "courseId": "personal-social",
+      "term": 2,
+      "evaluation": 3,
+      "score": 10,
+      "comment": "",
+      "id": "hJwxr6F"
+    },
+    {
+      "studentDni": "40112233",
+      "courseId": "personal-social",
+      "term": 2,
+      "evaluation": 4,
+      "score": 10,
+      "comment": "",
+      "id": "DgFIrRZ"
+    },
+    {
+      "studentDni": "40112233",
+      "courseId": "matematica-primaria",
+      "term": 3,
+      "evaluation": 2,
+      "score": 10,
+      "comment": "",
+      "id": "FH1M6UN"
+    },
+    {
+      "studentDni": "40112233",
+      "courseId": "matematica-primaria",
+      "term": 3,
+      "evaluation": 3,
+      "score": 10,
+      "comment": "",
+      "id": "0tXCsLZ"
+    },
+    {
+      "studentDni": "40112233",
+      "courseId": "matematica-primaria",
+      "term": 3,
+      "evaluation": 4,
+      "score": 10,
+      "comment": "",
+      "id": "QHOEdW4"
+    },
+    {
+      "studentDni": "40112233",
+      "courseId": "personal-social",
+      "term": 3,
+      "evaluation": 2,
+      "score": 10,
+      "comment": "",
+      "id": "u9brYhx"
+    },
+    {
+      "studentDni": "40112233",
+      "courseId": "personal-social",
+      "term": 3,
+      "evaluation": 3,
+      "score": 10,
+      "comment": "",
+      "id": "Snr27tP"
+    },
+    {
+      "studentDni": "40112233",
+      "courseId": "personal-social",
+      "term": 3,
+      "evaluation": 4,
+      "score": 10,
+      "comment": "",
+      "id": "C5F4pvR"
+    },
+    {
+      "studentDni": "40112233",
+      "courseId": "personal-social",
+      "term": 3,
+      "evaluation": 1,
+      "score": 10,
+      "comment": "",
+      "id": "liUfDoy"
+    },
+    {
+      "id": "g24",
+      "studentDni": "40118899",
+      "courseId": "arte-musica",
+      "term": 1,
+      "evaluation": 2,
+      "score": 14
+    },
+    {
+      "id": "g25",
+      "studentDni": "40118899",
+      "courseId": "arte-musica",
+      "term": 1,
+      "evaluation": 3,
+      "score": 15
+    },
+    {
+      "id": "g26",
+      "studentDni": "40118899",
+      "courseId": "arte-musica",
+      "term": 1,
+      "evaluation": 4,
+      "score": 14
+    },
+    {
+      "id": "g27",
+      "studentDni": "40118899",
+      "courseId": "arte-musica",
+      "term": 2,
+      "evaluation": 1,
+      "score": 15
+    },
+    {
+      "id": "g28",
+      "studentDni": "40118899",
+      "courseId": "arte-musica",
+      "term": 2,
+      "evaluation": 2,
+      "score": 16
+    },
+    {
+      "id": "g29",
+      "studentDni": "40118899",
+      "courseId": "arte-musica",
+      "term": 2,
+      "evaluation": 3,
+      "score": 15
+    },
+    {
+      "id": "g30",
+      "studentDni": "40118899",
+      "courseId": "arte-musica",
+      "term": 2,
+      "evaluation": 4,
+      "score": 16
+    },
+    {
+      "id": "g31",
+      "studentDni": "40118899",
+      "courseId": "arte-musica",
+      "term": 3,
+      "evaluation": 1,
+      "score": 16
+    },
+    {
+      "id": "g32",
+      "studentDni": "40118899",
+      "courseId": "arte-musica",
+      "term": 3,
+      "evaluation": 2,
+      "score": 17
+    },
+    {
+      "id": "g33",
+      "studentDni": "40118899",
+      "courseId": "arte-musica",
+      "term": 3,
+      "evaluation": 3,
+      "score": 16
+    },
+    {
+      "id": "g34",
+      "studentDni": "40118899",
+      "courseId": "arte-musica",
+      "term": 3,
+      "evaluation": 4,
+      "score": 17
+    },
+    {
+      "id": "g35",
+      "studentDni": "40118899",
+      "courseId": "comunicacion-integral",
+      "term": 1,
+      "evaluation": 1,
+      "score": 14
+    },
+    {
+      "id": "g36",
+      "studentDni": "40118899",
+      "courseId": "comunicacion-integral",
+      "term": 1,
+      "evaluation": 2,
+      "score": 15
+    },
+    {
+      "id": "g37",
+      "studentDni": "40118899",
+      "courseId": "comunicacion-integral",
+      "term": 1,
+      "evaluation": 3,
+      "score": 14
+    },
+    {
+      "id": "g38",
+      "studentDni": "40118899",
+      "courseId": "comunicacion-integral",
+      "term": 1,
+      "evaluation": 4,
+      "score": 15
+    },
+    {
+      "id": "g39",
+      "studentDni": "40118899",
+      "courseId": "comunicacion-integral",
+      "term": 2,
+      "evaluation": 1,
+      "score": 15
+    },
+    {
+      "id": "g40",
+      "studentDni": "40118899",
+      "courseId": "comunicacion-integral",
+      "term": 2,
+      "evaluation": 2,
+      "score": 15
+    },
+    {
+      "id": "g41",
+      "studentDni": "40118899",
+      "courseId": "comunicacion-integral",
+      "term": 2,
+      "evaluation": 3,
+      "score": 16
+    },
+    {
+      "id": "g42",
+      "studentDni": "40118899",
+      "courseId": "comunicacion-integral",
+      "term": 2,
+      "evaluation": 4,
+      "score": 15
+    },
+    {
+      "id": "g43",
+      "studentDni": "40118899",
+      "courseId": "comunicacion-integral",
+      "term": 3,
+      "evaluation": 1,
+      "score": 16
+    },
+    {
+      "id": "g44",
+      "studentDni": "40118899",
+      "courseId": "comunicacion-integral",
+      "term": 3,
+      "evaluation": 2,
+      "score": 16
+    },
+    {
+      "id": "g45",
+      "studentDni": "40118899",
+      "courseId": "comunicacion-integral",
+      "term": 3,
+      "evaluation": 3,
+      "score": 17
+    },
+    {
+      "id": "g46",
+      "studentDni": "40118899",
+      "courseId": "comunicacion-integral",
+      "term": 3,
+      "evaluation": 4,
+      "score": 16
+    },
+    {
+      "id": "g47",
+      "studentDni": "40116677",
+      "courseId": "personal-social",
+      "term": 1,
+      "evaluation": 2,
+      "score": 17
+    },
+    {
+      "id": "g48",
+      "studentDni": "40116677",
+      "courseId": "personal-social",
+      "term": 1,
+      "evaluation": 3,
+      "score": 16
+    },
+    {
+      "id": "g49",
+      "studentDni": "40116677",
+      "courseId": "personal-social",
+      "term": 1,
+      "evaluation": 4,
+      "score": 18
+    },
+    {
+      "id": "g50",
+      "studentDni": "40116677",
+      "courseId": "personal-social",
+      "term": 2,
+      "evaluation": 2,
+      "score": 17
+    },
+    {
+      "id": "g51",
+      "studentDni": "40116677",
+      "courseId": "personal-social",
+      "term": 2,
+      "evaluation": 3,
+      "score": 18
+    },
+    {
+      "id": "g52",
+      "studentDni": "40116677",
+      "courseId": "personal-social",
+      "term": 2,
+      "evaluation": 4,
+      "score": 17
+    },
+    {
+      "id": "g53",
+      "studentDni": "40116677",
+      "courseId": "personal-social",
+      "term": 3,
+      "evaluation": 2,
+      "score": 18
+    },
+    {
+      "id": "g54",
+      "studentDni": "40116677",
+      "courseId": "personal-social",
+      "term": 3,
+      "evaluation": 3,
+      "score": 17
+    },
+    {
+      "id": "g55",
+      "studentDni": "40116677",
+      "courseId": "personal-social",
+      "term": 3,
+      "evaluation": 4,
+      "score": 18
+    },
+    {
+      "id": "g56",
+      "studentDni": "40116677",
+      "courseId": "matematica-primaria",
+      "term": 1,
+      "evaluation": 1,
+      "score": 15
+    },
+    {
+      "id": "g57",
+      "studentDni": "40116677",
+      "courseId": "matematica-primaria",
+      "term": 1,
+      "evaluation": 2,
+      "score": 14
+    },
+    {
+      "id": "g58",
+      "studentDni": "40116677",
+      "courseId": "matematica-primaria",
+      "term": 1,
+      "evaluation": 3,
+      "score": 16
+    },
+    {
+      "id": "g59",
+      "studentDni": "40116677",
+      "courseId": "matematica-primaria",
+      "term": 1,
+      "evaluation": 4,
+      "score": 15
+    },
+    {
+      "id": "g60",
+      "studentDni": "40116677",
+      "courseId": "matematica-primaria",
+      "term": 2,
+      "evaluation": 1,
+      "score": 16
+    },
+    {
+      "id": "g61",
+      "studentDni": "40116677",
+      "courseId": "matematica-primaria",
+      "term": 2,
+      "evaluation": 2,
+      "score": 15
+    },
+    {
+      "id": "g62",
+      "studentDni": "40116677",
+      "courseId": "matematica-primaria",
+      "term": 2,
+      "evaluation": 3,
+      "score": 16
+    },
+    {
+      "id": "g63",
+      "studentDni": "40116677",
+      "courseId": "matematica-primaria",
+      "term": 2,
+      "evaluation": 4,
+      "score": 17
+    },
+    {
+      "id": "g64",
+      "studentDni": "40116677",
+      "courseId": "matematica-primaria",
+      "term": 3,
+      "evaluation": 1,
+      "score": 17
+    },
+    {
+      "id": "g65",
+      "studentDni": "40116677",
+      "courseId": "matematica-primaria",
+      "term": 3,
+      "evaluation": 2,
+      "score": 16
+    },
+    {
+      "id": "g66",
+      "studentDni": "40116677",
+      "courseId": "matematica-primaria",
+      "term": 3,
+      "evaluation": 3,
+      "score": 17
+    },
+    {
+      "id": "g67",
+      "studentDni": "40116677",
+      "courseId": "matematica-primaria",
+      "term": 3,
+      "evaluation": 4,
+      "score": 18
+    },
+    {
+      "id": "g68",
+      "studentDni": "40116677",
+      "courseId": "educacion-fisica",
+      "term": 1,
+      "evaluation": 1,
+      "score": 17
+    },
+    {
+      "id": "g69",
+      "studentDni": "40116677",
+      "courseId": "educacion-fisica",
+      "term": 1,
+      "evaluation": 2,
+      "score": 18
+    },
+    {
+      "id": "g70",
+      "studentDni": "40116677",
+      "courseId": "educacion-fisica",
+      "term": 1,
+      "evaluation": 3,
+      "score": 17
+    },
+    {
+      "id": "g71",
+      "studentDni": "40116677",
+      "courseId": "educacion-fisica",
+      "term": 1,
+      "evaluation": 4,
+      "score": 18
+    },
+    {
+      "id": "g72",
+      "studentDni": "40116677",
+      "courseId": "educacion-fisica",
+      "term": 2,
+      "evaluation": 1,
+      "score": 18
+    },
+    {
+      "id": "g73",
+      "studentDni": "40116677",
+      "courseId": "educacion-fisica",
+      "term": 2,
+      "evaluation": 2,
+      "score": 17
+    },
+    {
+      "id": "g74",
+      "studentDni": "40116677",
+      "courseId": "educacion-fisica",
+      "term": 2,
+      "evaluation": 3,
+      "score": 18
+    },
+    {
+      "id": "g75",
+      "studentDni": "40116677",
+      "courseId": "educacion-fisica",
+      "term": 2,
+      "evaluation": 4,
+      "score": 19
+    },
+    {
+      "id": "g76",
+      "studentDni": "40116677",
+      "courseId": "educacion-fisica",
+      "term": 3,
+      "evaluation": 1,
+      "score": 18
+    },
+    {
+      "id": "g77",
+      "studentDni": "40116677",
+      "courseId": "educacion-fisica",
+      "term": 3,
+      "evaluation": 2,
+      "score": 18
+    },
+    {
+      "id": "g78",
+      "studentDni": "40116677",
+      "courseId": "educacion-fisica",
+      "term": 3,
+      "evaluation": 3,
+      "score": 19
+    },
+    {
+      "id": "g79",
+      "studentDni": "40116677",
+      "courseId": "educacion-fisica",
+      "term": 3,
+      "evaluation": 4,
+      "score": 19
+    },
+    {
+      "id": "g80",
+      "studentDni": "40114455",
+      "courseId": "matematica-primaria",
+      "term": 1,
+      "evaluation": 2,
+      "score": 13
+    },
+    {
+      "id": "g81",
+      "studentDni": "40114455",
+      "courseId": "matematica-primaria",
+      "term": 1,
+      "evaluation": 3,
+      "score": 14
+    },
+    {
+      "id": "g82",
+      "studentDni": "40114455",
+      "courseId": "matematica-primaria",
+      "term": 1,
+      "evaluation": 4,
+      "score": 13
+    },
+    {
+      "id": "g83",
+      "studentDni": "40114455",
+      "courseId": "matematica-primaria",
+      "term": 2,
+      "evaluation": 2,
+      "score": 14
+    },
+    {
+      "id": "g84",
+      "studentDni": "40114455",
+      "courseId": "matematica-primaria",
+      "term": 2,
+      "evaluation": 3,
+      "score": 15
+    },
+    {
+      "id": "g85",
+      "studentDni": "40114455",
+      "courseId": "matematica-primaria",
+      "term": 2,
+      "evaluation": 4,
+      "score": 15
+    },
+    {
+      "id": "g86",
+      "studentDni": "40114455",
+      "courseId": "matematica-primaria",
+      "term": 3,
+      "evaluation": 2,
+      "score": 15
+    },
+    {
+      "id": "g87",
+      "studentDni": "40114455",
+      "courseId": "matematica-primaria",
+      "term": 3,
+      "evaluation": 3,
+      "score": 16
+    },
+    {
+      "id": "g88",
+      "studentDni": "40114455",
+      "courseId": "matematica-primaria",
+      "term": 3,
+      "evaluation": 4,
+      "score": 16
+    },
+    {
+      "id": "g89",
+      "studentDni": "40114455",
+      "courseId": "personal-social",
+      "term": 1,
+      "evaluation": 1,
+      "score": 14
+    },
+    {
+      "id": "g90",
+      "studentDni": "40114455",
+      "courseId": "personal-social",
+      "term": 1,
+      "evaluation": 2,
+      "score": 15
+    },
+    {
+      "id": "g91",
+      "studentDni": "40114455",
+      "courseId": "personal-social",
+      "term": 1,
+      "evaluation": 3,
+      "score": 14
+    },
+    {
+      "id": "g92",
+      "studentDni": "40114455",
+      "courseId": "personal-social",
+      "term": 1,
+      "evaluation": 4,
+      "score": 15
+    },
+    {
+      "id": "g93",
+      "studentDni": "40114455",
+      "courseId": "personal-social",
+      "term": 2,
+      "evaluation": 1,
+      "score": 15
+    },
+    {
+      "id": "g94",
+      "studentDni": "40114455",
+      "courseId": "personal-social",
+      "term": 2,
+      "evaluation": 2,
+      "score": 15
+    },
+    {
+      "id": "g95",
+      "studentDni": "40114455",
+      "courseId": "personal-social",
+      "term": 2,
+      "evaluation": 3,
+      "score": 16
+    },
+    {
+      "id": "g96",
+      "studentDni": "40114455",
+      "courseId": "personal-social",
+      "term": 2,
+      "evaluation": 4,
+      "score": 15
+    },
+    {
+      "id": "g97",
+      "studentDni": "40114455",
+      "courseId": "personal-social",
+      "term": 3,
+      "evaluation": 1,
+      "score": 16
+    },
+    {
+      "id": "g98",
+      "studentDni": "40114455",
+      "courseId": "personal-social",
+      "term": 3,
+      "evaluation": 2,
+      "score": 16
+    },
+    {
+      "id": "g99",
+      "studentDni": "40114455",
+      "courseId": "personal-social",
+      "term": 3,
+      "evaluation": 3,
+      "score": 17
+    },
+    {
+      "id": "g100",
+      "studentDni": "40114455",
+      "courseId": "personal-social",
+      "term": 3,
+      "evaluation": 4,
+      "score": 16
+    },
+    {
+      "id": "g101",
+      "studentDni": "40113344",
+      "courseId": "ciencia-tecnologia",
+      "term": 1,
+      "evaluation": 1,
+      "score": 15
+    },
+    {
+      "id": "g102",
+      "studentDni": "40113344",
+      "courseId": "ciencia-tecnologia",
+      "term": 1,
+      "evaluation": 2,
+      "score": 14
+    },
+    {
+      "id": "g103",
+      "studentDni": "40113344",
+      "courseId": "ciencia-tecnologia",
+      "term": 1,
+      "evaluation": 3,
+      "score": 16
+    },
+    {
+      "id": "g104",
+      "studentDni": "40113344",
+      "courseId": "ciencia-tecnologia",
+      "term": 1,
+      "evaluation": 4,
+      "score": 15
+    },
+    {
+      "id": "g105",
+      "studentDni": "40113344",
+      "courseId": "ciencia-tecnologia",
+      "term": 2,
+      "evaluation": 1,
+      "score": 16
+    },
+    {
+      "id": "g106",
+      "studentDni": "40113344",
+      "courseId": "ciencia-tecnologia",
+      "term": 2,
+      "evaluation": 2,
+      "score": 15
+    },
+    {
+      "id": "g107",
+      "studentDni": "40113344",
+      "courseId": "ciencia-tecnologia",
+      "term": 2,
+      "evaluation": 3,
+      "score": 17
+    },
+    {
+      "id": "g108",
+      "studentDni": "40113344",
+      "courseId": "ciencia-tecnologia",
+      "term": 2,
+      "evaluation": 4,
+      "score": 16
+    },
+    {
+      "id": "g109",
+      "studentDni": "40113344",
+      "courseId": "ciencia-tecnologia",
+      "term": 3,
+      "evaluation": 1,
+      "score": 17
+    },
+    {
+      "id": "g110",
+      "studentDni": "40113344",
+      "courseId": "ciencia-tecnologia",
+      "term": 3,
+      "evaluation": 2,
+      "score": 16
+    },
+    {
+      "id": "g111",
+      "studentDni": "40113344",
+      "courseId": "ciencia-tecnologia",
+      "term": 3,
+      "evaluation": 3,
+      "score": 17
+    },
+    {
+      "id": "g112",
+      "studentDni": "40113344",
+      "courseId": "ciencia-tecnologia",
+      "term": 3,
+      "evaluation": 4,
+      "score": 18
+    },
+    {
+      "id": "g113",
+      "studentDni": "40113344",
+      "courseId": "ingles",
+      "term": 1,
+      "evaluation": 1,
+      "score": 14
+    },
+    {
+      "id": "g114",
+      "studentDni": "40113344",
+      "courseId": "ingles",
+      "term": 1,
+      "evaluation": 2,
+      "score": 14
+    },
+    {
+      "id": "g115",
+      "studentDni": "40113344",
+      "courseId": "ingles",
+      "term": 1,
+      "evaluation": 3,
+      "score": 15
+    },
+    {
+      "id": "g116",
+      "studentDni": "40113344",
+      "courseId": "ingles",
+      "term": 1,
+      "evaluation": 4,
+      "score": 15
+    },
+    {
+      "id": "g117",
+      "studentDni": "40113344",
+      "courseId": "ingles",
+      "term": 2,
+      "evaluation": 1,
+      "score": 15
+    },
+    {
+      "id": "g118",
+      "studentDni": "40113344",
+      "courseId": "ingles",
+      "term": 2,
+      "evaluation": 2,
+      "score": 15
+    },
+    {
+      "id": "g119",
+      "studentDni": "40113344",
+      "courseId": "ingles",
+      "term": 2,
+      "evaluation": 3,
+      "score": 16
+    },
+    {
+      "id": "g120",
+      "studentDni": "40113344",
+      "courseId": "ingles",
+      "term": 2,
+      "evaluation": 4,
+      "score": 16
+    },
+    {
+      "id": "g121",
+      "studentDni": "40113344",
+      "courseId": "ingles",
+      "term": 3,
+      "evaluation": 1,
+      "score": 16
+    },
+    {
+      "id": "g122",
+      "studentDni": "40113344",
+      "courseId": "ingles",
+      "term": 3,
+      "evaluation": 2,
+      "score": 16
+    },
+    {
+      "id": "g123",
+      "studentDni": "40113344",
+      "courseId": "ingles",
+      "term": 3,
+      "evaluation": 3,
+      "score": 17
+    },
+    {
+      "id": "g124",
+      "studentDni": "40113344",
+      "courseId": "ingles",
+      "term": 3,
+      "evaluation": 4,
+      "score": 17
+    },
+    {
+      "id": "g125",
+      "studentDni": "40113344",
+      "courseId": "personal-social",
+      "term": 1,
+      "evaluation": 1,
+      "score": 15
+    },
+    {
+      "id": "g126",
+      "studentDni": "40113344",
+      "courseId": "personal-social",
+      "term": 1,
+      "evaluation": 2,
+      "score": 15
+    },
+    {
+      "id": "g127",
+      "studentDni": "40113344",
+      "courseId": "personal-social",
+      "term": 1,
+      "evaluation": 3,
+      "score": 14
+    },
+    {
+      "id": "g128",
+      "studentDni": "40113344",
+      "courseId": "personal-social",
+      "term": 1,
+      "evaluation": 4,
+      "score": 15
+    },
+    {
+      "id": "g129",
+      "studentDni": "40113344",
+      "courseId": "personal-social",
+      "term": 2,
+      "evaluation": 1,
+      "score": 15
+    },
+    {
+      "id": "g130",
+      "studentDni": "40113344",
+      "courseId": "personal-social",
+      "term": 2,
+      "evaluation": 2,
+      "score": 16
+    },
+    {
+      "id": "g131",
+      "studentDni": "40113344",
+      "courseId": "personal-social",
+      "term": 2,
+      "evaluation": 3,
+      "score": 15
+    },
+    {
+      "id": "g132",
+      "studentDni": "40113344",
+      "courseId": "personal-social",
+      "term": 2,
+      "evaluation": 4,
+      "score": 16
+    },
+    {
+      "id": "g133",
+      "studentDni": "40113344",
+      "courseId": "personal-social",
+      "term": 3,
+      "evaluation": 1,
+      "score": 16
+    },
+    {
+      "id": "g134",
+      "studentDni": "40113344",
+      "courseId": "personal-social",
+      "term": 3,
+      "evaluation": 2,
+      "score": 17
+    },
+    {
+      "id": "g135",
+      "studentDni": "40113344",
+      "courseId": "personal-social",
+      "term": 3,
+      "evaluation": 3,
+      "score": 16
+    },
+    {
+      "id": "g136",
+      "studentDni": "40113344",
+      "courseId": "personal-social",
+      "term": 3,
+      "evaluation": 4,
+      "score": 17
+    },
+    {
+      "id": "g137",
+      "studentDni": "40112233",
+      "courseId": "arte-musica",
+      "term": 1,
+      "evaluation": 1,
+      "score": 17
+    },
+    {
+      "id": "g138",
+      "studentDni": "40112233",
+      "courseId": "arte-musica",
+      "term": 1,
+      "evaluation": 2,
+      "score": 18
+    },
+    {
+      "id": "g139",
+      "studentDni": "40112233",
+      "courseId": "arte-musica",
+      "term": 1,
+      "evaluation": 3,
+      "score": 17
+    },
+    {
+      "id": "g140",
+      "studentDni": "40112233",
+      "courseId": "arte-musica",
+      "term": 1,
+      "evaluation": 4,
+      "score": 18
+    },
+    {
+      "id": "g141",
+      "studentDni": "40112233",
+      "courseId": "arte-musica",
+      "term": 2,
+      "evaluation": 1,
+      "score": 18
+    },
+    {
+      "id": "g142",
+      "studentDni": "40112233",
+      "courseId": "arte-musica",
+      "term": 2,
+      "evaluation": 2,
+      "score": 17
+    },
+    {
+      "id": "g143",
+      "studentDni": "40112233",
+      "courseId": "arte-musica",
+      "term": 2,
+      "evaluation": 3,
+      "score": 18
+    },
+    {
+      "id": "g144",
+      "studentDni": "40112233",
+      "courseId": "arte-musica",
+      "term": 2,
+      "evaluation": 4,
+      "score": 19
+    },
+    {
+      "id": "g145",
+      "studentDni": "40112233",
+      "courseId": "arte-musica",
+      "term": 3,
+      "evaluation": 1,
+      "score": 19
+    },
+    {
+      "id": "g146",
+      "studentDni": "40112233",
+      "courseId": "arte-musica",
+      "term": 3,
+      "evaluation": 2,
+      "score": 18
+    },
+    {
+      "id": "g147",
+      "studentDni": "40112233",
+      "courseId": "arte-musica",
+      "term": 3,
+      "evaluation": 3,
+      "score": 19
+    },
+    {
+      "id": "g148",
+      "studentDni": "40112233",
+      "courseId": "arte-musica",
+      "term": 3,
+      "evaluation": 4,
+      "score": 18
+    },
+    {
+      "id": "g149",
+      "studentDni": "40112233",
+      "courseId": "comunicacion-integral",
+      "term": 1,
+      "evaluation": 1,
+      "score": 18
+    },
+    {
+      "id": "g150",
+      "studentDni": "40112233",
+      "courseId": "comunicacion-integral",
+      "term": 1,
+      "evaluation": 2,
+      "score": 17
+    },
+    {
+      "id": "g151",
+      "studentDni": "40112233",
+      "courseId": "comunicacion-integral",
+      "term": 1,
+      "evaluation": 3,
+      "score": 18
+    },
+    {
+      "id": "g152",
+      "studentDni": "40112233",
+      "courseId": "comunicacion-integral",
+      "term": 1,
+      "evaluation": 4,
+      "score": 17
+    },
+    {
+      "id": "g153",
+      "studentDni": "40112233",
+      "courseId": "comunicacion-integral",
+      "term": 2,
+      "evaluation": 1,
+      "score": 17
+    },
+    {
+      "id": "g154",
+      "studentDni": "40112233",
+      "courseId": "comunicacion-integral",
+      "term": 2,
+      "evaluation": 2,
+      "score": 18
+    },
+    {
+      "id": "g155",
+      "studentDni": "40112233",
+      "courseId": "comunicacion-integral",
+      "term": 2,
+      "evaluation": 3,
+      "score": 17
+    },
+    {
+      "id": "g156",
+      "studentDni": "40112233",
+      "courseId": "comunicacion-integral",
+      "term": 2,
+      "evaluation": 4,
+      "score": 18
+    },
+    {
+      "id": "g157",
+      "studentDni": "40112233",
+      "courseId": "comunicacion-integral",
+      "term": 3,
+      "evaluation": 1,
+      "score": 18
+    },
+    {
+      "id": "g158",
+      "studentDni": "40112233",
+      "courseId": "comunicacion-integral",
+      "term": 3,
+      "evaluation": 2,
+      "score": 18
+    },
+    {
+      "id": "g159",
+      "studentDni": "40112233",
+      "courseId": "comunicacion-integral",
+      "term": 3,
+      "evaluation": 3,
+      "score": 19
+    },
+    {
+      "id": "g160",
+      "studentDni": "40112233",
+      "courseId": "comunicacion-integral",
+      "term": 3,
+      "evaluation": 4,
+      "score": 18
+    },
+    {
+      "id": "g161",
+      "studentDni": "40121122",
+      "courseId": "educacion-fisica",
+      "term": 1,
+      "evaluation": 2,
+      "score": 18
+    },
+    {
+      "id": "g162",
+      "studentDni": "40121122",
+      "courseId": "educacion-fisica",
+      "term": 1,
+      "evaluation": 3,
+      "score": 17
+    },
+    {
+      "id": "g163",
+      "studentDni": "40121122",
+      "courseId": "educacion-fisica",
+      "term": 1,
+      "evaluation": 4,
+      "score": 18
+    },
+    {
+      "id": "g164",
+      "studentDni": "40121122",
+      "courseId": "educacion-fisica",
+      "term": 2,
+      "evaluation": 1,
+      "score": 18
+    },
+    {
+      "id": "g165",
+      "studentDni": "40121122",
+      "courseId": "educacion-fisica",
+      "term": 2,
+      "evaluation": 2,
+      "score": 17
+    },
+    {
+      "id": "g166",
+      "studentDni": "40121122",
+      "courseId": "educacion-fisica",
+      "term": 2,
+      "evaluation": 3,
+      "score": 18
+    },
+    {
+      "id": "g167",
+      "studentDni": "40121122",
+      "courseId": "educacion-fisica",
+      "term": 2,
+      "evaluation": 4,
+      "score": 18
+    },
+    {
+      "id": "g168",
+      "studentDni": "40121122",
+      "courseId": "educacion-fisica",
+      "term": 3,
+      "evaluation": 1,
+      "score": 19
+    },
+    {
+      "id": "g169",
+      "studentDni": "40121122",
+      "courseId": "educacion-fisica",
+      "term": 3,
+      "evaluation": 2,
+      "score": 18
+    },
+    {
+      "id": "g170",
+      "studentDni": "40121122",
+      "courseId": "educacion-fisica",
+      "term": 3,
+      "evaluation": 3,
+      "score": 19
+    },
+    {
+      "id": "g171",
+      "studentDni": "40121122",
+      "courseId": "educacion-fisica",
+      "term": 3,
+      "evaluation": 4,
+      "score": 19
+    },
+    {
+      "id": "g172",
+      "studentDni": "40115566",
+      "courseId": "ciencia-tecnologia",
+      "term": 1,
+      "evaluation": 2,
+      "score": 15
+    },
+    {
+      "id": "g173",
+      "studentDni": "40115566",
+      "courseId": "ciencia-tecnologia",
+      "term": 1,
+      "evaluation": 3,
+      "score": 16
+    },
+    {
+      "id": "g174",
+      "studentDni": "40115566",
+      "courseId": "ciencia-tecnologia",
+      "term": 1,
+      "evaluation": 4,
+      "score": 15
+    },
+    {
+      "id": "g175",
+      "studentDni": "40115566",
+      "courseId": "ciencia-tecnologia",
+      "term": 2,
+      "evaluation": 2,
+      "score": 16
+    },
+    {
+      "id": "g176",
+      "studentDni": "40115566",
+      "courseId": "ciencia-tecnologia",
+      "term": 2,
+      "evaluation": 3,
+      "score": 17
+    },
+    {
+      "id": "g177",
+      "studentDni": "40115566",
+      "courseId": "ciencia-tecnologia",
+      "term": 2,
+      "evaluation": 4,
+      "score": 17
+    },
+    {
+      "id": "g178",
+      "studentDni": "40115566",
+      "courseId": "ciencia-tecnologia",
+      "term": 3,
+      "evaluation": 2,
+      "score": 17
+    },
+    {
+      "id": "g179",
+      "studentDni": "40115566",
+      "courseId": "ciencia-tecnologia",
+      "term": 3,
+      "evaluation": 3,
+      "score": 18
+    },
+    {
+      "id": "g180",
+      "studentDni": "40115566",
+      "courseId": "ciencia-tecnologia",
+      "term": 3,
+      "evaluation": 4,
+      "score": 18
+    },
+    {
+      "id": "g181",
+      "studentDni": "40115566",
+      "courseId": "personal-social",
+      "term": 1,
+      "evaluation": 2,
+      "score": 16
+    },
+    {
+      "id": "g182",
+      "studentDni": "40115566",
+      "courseId": "personal-social",
+      "term": 1,
+      "evaluation": 3,
+      "score": 16
+    },
+    {
+      "id": "g183",
+      "studentDni": "40115566",
+      "courseId": "personal-social",
+      "term": 1,
+      "evaluation": 4,
+      "score": 17
+    },
+    {
+      "id": "g184",
+      "studentDni": "40115566",
+      "courseId": "personal-social",
+      "term": 2,
+      "evaluation": 1,
+      "score": 16
+    },
+    {
+      "id": "g185",
+      "studentDni": "40115566",
+      "courseId": "personal-social",
+      "term": 2,
+      "evaluation": 2,
+      "score": 16
+    },
+    {
+      "id": "g186",
+      "studentDni": "40115566",
+      "courseId": "personal-social",
+      "term": 2,
+      "evaluation": 3,
+      "score": 17
+    },
+    {
+      "id": "g187",
+      "studentDni": "40115566",
+      "courseId": "personal-social",
+      "term": 2,
+      "evaluation": 4,
+      "score": 17
+    },
+    {
+      "id": "g188",
+      "studentDni": "40115566",
+      "courseId": "personal-social",
+      "term": 3,
+      "evaluation": 1,
+      "score": 17
+    },
+    {
+      "id": "g189",
+      "studentDni": "40115566",
+      "courseId": "personal-social",
+      "term": 3,
+      "evaluation": 2,
+      "score": 17
+    },
+    {
+      "id": "g190",
+      "studentDni": "40115566",
+      "courseId": "personal-social",
+      "term": 3,
+      "evaluation": 3,
+      "score": 18
+    },
+    {
+      "id": "g191",
+      "studentDni": "40115566",
+      "courseId": "personal-social",
+      "term": 3,
+      "evaluation": 4,
+      "score": 18
+    }
+  ],
+  "schedules": [
+    {
+      "teacherDni": "30112233",
+      "shift": "MANANA",
+      "grade": 4,
+      "section": "A",
+      "courses": [
+        "matematica-primaria",
+        "personal-social"
+      ],
+      "id": "sch-101"
+    },
+    {
+      "teacherDni": "31223344",
+      "shift": "MANANA",
+      "grade": 4,
+      "section": "A",
+      "courses": [
+        "comunicacion-integral",
+        "arte-musica"
+      ],
+      "id": "sch-102"
+    },
+    {
+      "teacherDni": "32334455",
+      "shift": "TARDE",
+      "grade": 5,
+      "section": "B",
+      "courses": [
+        "ciencia-tecnologia",
+        "personal-social"
+      ],
+      "id": "sch-103"
+    },
+    {
+      "teacherDni": "33445566",
+      "shift": "MANANA",
+      "grade": 5,
+      "section": "B",
+      "courses": [
+        "ingles"
+      ],
+      "id": "sch-104"
+    },
+    {
+      "teacherDni": "34556677",
+      "shift": "MANANA",
+      "grade": 4,
+      "section": "A",
+      "courses": [
+        "educacion-fisica"
+      ],
+      "id": "sch-105"
+    }
+  ],
+  "enrollments": [
+    {
+      "id": "en-01",
+      "scheduleId": "sch-101",
+      "studentDni": "40112233"
+    },
+    {
+      "id": "en-02",
+      "scheduleId": "sch-101",
+      "studentDni": "40114455"
+    },
+    {
+      "id": "en-03",
+      "scheduleId": "sch-101",
+      "studentDni": "40116677"
+    },
+    {
+      "id": "en-04",
+      "scheduleId": "sch-102",
+      "studentDni": "40112233"
+    },
+    {
+      "id": "en-05",
+      "scheduleId": "sch-102",
+      "studentDni": "40118899"
+    },
+    {
+      "id": "en-06",
+      "scheduleId": "sch-103",
+      "studentDni": "40113344"
+    },
+    {
+      "id": "en-07",
+      "scheduleId": "sch-103",
+      "studentDni": "40115566"
+    },
+    {
+      "id": "en-08",
+      "scheduleId": "sch-104",
+      "studentDni": "40113344"
+    },
+    {
+      "id": "en-09",
+      "scheduleId": "sch-105",
+      "studentDni": "40116677"
+    },
+    {
+      "id": "en-10",
+      "scheduleId": "sch-105",
+      "studentDni": "40121122"
+    }
+  ]
+}

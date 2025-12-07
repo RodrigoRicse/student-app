@@ -1,0 +1,12 @@
+/* RESET BASICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #020617;
+  color: #e2e8f0;
+}
