@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { Schedule, Shift } from "../types/Schedule";
 import type { Teacher } from "../../teachers/types/Teacher";
 import type { Course } from "../../courses/types/Course";
@@ -14,12 +14,42 @@ interface ScheduleFormProps {
 const SHIFTS: Array<{ value: Shift; label: string }> = [
   { value: "MANANA", label: "Manana" },
   { value: "TARDE", label: "Tarde" },
-  { value: "NOCHE", label: "Noche" },
 ];
+
+const SECTIONS_BY_SHIFT: Record<Shift, Array<Exclude<Schedule["section"], "ROTATIVO">>> = {
+  MANANA: ["A", "B"],
+  TARDE: ["C", "D"],
+};
+
+const SHIFT_BY_SECTION: Partial<Record<Schedule["section"], Shift>> = {
+  A: "MANANA",
+  B: "MANANA",
+  C: "TARDE",
+  D: "TARDE",
+};
+
+const COURSES_BY_SPECIALTY: Record<Teacher["specialty"], string[]> = {
+  "Primaria General": [
+    "matematica",
+    "razonamiento-matematico",
+    "comunicacion",
+    "razonamiento-verbal",
+    "plan-lector",
+    "personal-social",
+    "ciencia-tecnologia",
+    "educacion-religiosa",
+    "tutoria",
+  ],
+  Idiomas: ["ingles"],
+  Deportes: ["educacion-fisica", "psicomotricidad"],
+  Artes: ["arte-cultura"],
+  Computo: ["computacion", "robotica"],
+};
 
 export function ScheduleForm({ initialSchedule, teachers, courses, onSaved }: ScheduleFormProps) {
   const isEditing = Boolean(initialSchedule);
   const [saving, setSaving] = useState(false);
+  const prevTeacherForCourses = useRef<string | null>(null);
 
   const [form, setForm] = useState<Omit<Schedule, "id">>({
     teacherDni: initialSchedule?.teacherDni ?? "",
@@ -41,10 +71,46 @@ export function ScheduleForm({ initialSchedule, teachers, courses, onSaved }: Sc
     }
   }, [initialSchedule]);
 
+  // fuerza compatibilidad entre turno y seccion, salvo docentes rotativos
+  useEffect(() => {
+    setForm((prev) => {
+      if (prev.section === "ROTATIVO") return prev;
+      const allowed = SECTIONS_BY_SHIFT[prev.shift];
+      if (!allowed.includes(prev.section)) {
+        return { ...prev, section: allowed[0] };
+      }
+      return prev;
+    });
+  }, [form.shift]);
+
   const activeCourses = useMemo(
     () => courses.filter((c) => c.status === "ACTIVO"),
     [courses]
   );
+
+  // auto-selecciona cursos segun la especialidad del docente
+  useEffect(() => {
+    const teacher = teachers.find((t) => t.dni === form.teacherDni);
+    if (!teacher) {
+      setForm((prev) => ({ ...prev, courses: [] }));
+      prevTeacherForCourses.current = null;
+      return;
+    }
+
+    const teacherChanged = prevTeacherForCourses.current !== teacher.dni;
+    const mappedCourses = COURSES_BY_SPECIALTY[teacher.specialty] ?? [];
+    const activeIds = activeCourses.map((c) => c.id);
+    const filtered = mappedCourses.filter((id) => activeIds.includes(id));
+
+    const isInitialEditSameTeacher =
+      isEditing && initialSchedule?.teacherDni === teacher.dni && prevTeacherForCourses.current === null;
+
+    if (!isInitialEditSameTeacher && (teacherChanged || form.courses.length === 0)) {
+      setForm((prev) => ({ ...prev, courses: filtered }));
+    }
+
+    prevTeacherForCourses.current = teacher.dni;
+  }, [form.teacherDni, teachers, activeCourses, isEditing, initialSchedule?.teacherDni]);
 
   // Limpia selecciones que ya no sean cursos activos
   useEffect(() => {
@@ -60,6 +126,27 @@ export function ScheduleForm({ initialSchedule, teachers, courses, onSaved }: Sc
     () => teachers.find((t) => t.dni === form.teacherDni),
     [teachers, form.teacherDni]
   );
+
+  // cuando cambia el docente, sincronizar grado y seccion; turno se deriva salvo casos rotativos
+  useEffect(() => {
+    const teacher = teachers.find((t) => t.dni === form.teacherDni);
+    if (!form.teacherDni || !teacher) {
+      setForm((prev) => ({ ...prev, grade: 1, section: "A", shift: "MANANA" }));
+      return;
+    }
+    setForm((prev) => {
+      const derivedShift =
+        teacher.section === "ROTATIVO"
+          ? prev.shift
+          : SHIFT_BY_SECTION[teacher.section] ?? "MANANA";
+      return {
+        ...prev,
+        grade: teacher.grade,
+        section: teacher.section,
+        shift: derivedShift,
+      };
+    });
+  }, [form.teacherDni, teachers]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -89,6 +176,13 @@ export function ScheduleForm({ initialSchedule, teachers, courses, onSaved }: Sc
     });
   };
 
+  const isRotatingTeacher = form.grade === "ALL" && form.section === "ROTATIVO";
+  const allowedSections: Schedule["section"][] =
+    form.section === "ROTATIVO" ? ["ROTATIVO"] : SECTIONS_BY_SHIFT[form.shift];
+
+  const gradeLabel = form.grade === "ALL" ? "Todos" : form.grade;
+  const sectionLabel = form.section === "ROTATIVO" ? "Rotativo" : form.section;
+
   return (
     <form className="card form" onSubmit={handleSubmit}>
       <h2 className="card__title">{isEditing ? "Editar horario" : "Nuevo horario"}</h2>
@@ -115,6 +209,7 @@ export function ScheduleForm({ initialSchedule, teachers, courses, onSaved }: Sc
           <select
             name="shift"
             value={form.shift}
+            disabled={!isRotatingTeacher}
             onChange={(e) => setForm((prev) => ({ ...prev, shift: e.target.value as Shift }))}
           >
             {SHIFTS.map((s) => (
@@ -130,13 +225,17 @@ export function ScheduleForm({ initialSchedule, teachers, courses, onSaved }: Sc
           <select
             name="grade"
             value={form.grade}
-            onChange={(e) => setForm((prev) => ({ ...prev, grade: Number(e.target.value) }))}
+            disabled
           >
-            {[1, 2, 3, 4, 5, 6].map((g) => (
-              <option key={g} value={g}>
-                {g}
-              </option>
-            ))}
+            {form.grade === "ALL" ? (
+              <option value="ALL">Todos</option>
+            ) : (
+              [1, 2, 3, 4, 5, 6].map((g) => (
+                <option key={g} value={g}>
+                  {g}
+                </option>
+              ))
+            )}
           </select>
         </div>
 
@@ -145,11 +244,11 @@ export function ScheduleForm({ initialSchedule, teachers, courses, onSaved }: Sc
           <select
             name="section"
             value={form.section}
-            onChange={(e) => setForm((prev) => ({ ...prev, section: e.target.value }))}
+            disabled
           >
-            {["A", "B", "C", "D"].map((s) => (
+            {allowedSections.map((s) => (
               <option key={s} value={s}>
-                {s}
+                {s === "ROTATIVO" ? "Rotativo" : s}
               </option>
             ))}
           </select>
@@ -199,7 +298,7 @@ export function ScheduleForm({ initialSchedule, teachers, courses, onSaved }: Sc
         <div className="card" style={{ padding: "12px" }}>
           <div>Docente: {selectedTeacher ? `${selectedTeacher.name} ${selectedTeacher.lastname}` : "-"}</div>
           <div>Turno: {SHIFTS.find((s) => s.value === form.shift)?.label}</div>
-          <div>Grado: {form.grade} - Seccion {form.section}</div>
+          <div>Grado: {gradeLabel} - Seccion {sectionLabel}</div>
           <div>Cursos: {form.courses.length}</div>
         </div>
       </div>

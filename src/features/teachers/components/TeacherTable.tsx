@@ -7,6 +7,9 @@ interface Props {
 }
 
 export function TeacherTable({ teachers, onDelete }: Props) {
+  const gradeLabel = (grade: Teacher["grade"]) => (grade === "ALL" ? "Todos" : grade);
+  const sectionLabel = (section: Teacher["section"]) => (section === "ROTATIVO" ? "Rotativo" : section);
+
   return (
     <div className="table-wrapper">
       <table className="table">
@@ -18,7 +21,7 @@ export function TeacherTable({ teachers, onDelete }: Props) {
             <th>Sexo</th>
             <th>Especialidad</th>
             <th>Grado</th>
-            <th>Seccion</th>
+            <th>Sección</th>
             <th>Rol</th>
             <th>Estado</th>
             <th>Acciones</th>
@@ -41,8 +44,8 @@ export function TeacherTable({ teachers, onDelete }: Props) {
               <td>{t.email}</td>
               <td>{t.sex === "M" ? "Masculino" : "Femenino"}</td>
               <td>{t.specialty}</td>
-              <td>{t.grade}</td>
-              <td>{t.section}</td>
+              <td>{gradeLabel(t.grade)}</td>
+              <td>{sectionLabel(t.section)}</td>
               <td>{t.role}</td>
               <td>
                 <span className={"badge " + (t.status === "ACTIVO" ? "badge--success" : "badge--danger")}>

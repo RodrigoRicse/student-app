@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import type { Student } from "../types/Student";
 import { studentService } from "../services/studentService";
@@ -10,11 +10,13 @@ interface StudentFormProps {
 
 const LEVEL = "Primaria";
 const GRADES = [1, 2, 3, 4, 5, 6];
-const SECTIONS = ["A", "B", "C", "D"];
+const SECTIONS_BY_SHIFT = {
+  MANANA: ["A", "B"] as const,
+  TARDE: ["C", "D"] as const,
+};
 const SHIFTS = [
   { value: "MANANA", label: "Manana" },
   { value: "TARDE", label: "Tarde" },
-  { value: "NOCHE", label: "Noche" },
 ];
 
 export function StudentForm({ initialStudent }: StudentFormProps) {
@@ -40,13 +42,37 @@ export function StudentForm({ initialStudent }: StudentFormProps) {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
 
+  // asegura que la seccion corresponda al turno
+  useEffect(() => {
+    setForm((prev) => {
+      const allowed = SECTIONS_BY_SHIFT[prev.shift];
+      if (!allowed.includes(prev.section)) {
+        return { ...prev, section: allowed[0] };
+      }
+      return prev;
+    });
+  }, [form.shift]);
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = event.target;
 
-    setForm((prev) => ({
-      ...prev,
-      [name]: name === "age" || name === "grade" ? Number(value) : value,
-    }));
+    setForm((prev) => {
+      if (name === "shift") {
+        const nextShift = value as Student["shift"];
+        const allowed = SECTIONS_BY_SHIFT[nextShift];
+        const nextSection = allowed.includes(prev.section) ? prev.section : allowed[0];
+        return { ...prev, shift: nextShift, section: nextSection };
+      }
+
+      if (name === "section") {
+        return { ...prev, section: value as Student["section"] };
+      }
+
+      return {
+        ...prev,
+        [name]: name === "age" || name === "grade" ? Number(value) : value,
+      };
+    });
   };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -91,6 +117,8 @@ export function StudentForm({ initialStudent }: StudentFormProps) {
   const showError = (field: string) =>
     errors[field] ? <span className="form__error">{errors[field]}</span> : null;
 
+  const allowedSections = SECTIONS_BY_SHIFT[form.shift];
+
   return (
     <form className="card form" onSubmit={handleSubmit}>
       <h2 className="card__title">{isEditing ? "Editar estudiante" : "Nuevo estudiante"}</h2>
@@ -103,13 +131,13 @@ export function StudentForm({ initialStudent }: StudentFormProps) {
         </div>
 
         <div className="form__group">
-          <label htmlFor="name">Nombre</label>
+          <label htmlFor="name">Nombres</label>
           <input id="name" name="name" value={form.name} onChange={handleChange} />
           {showError("name")}
         </div>
 
         <div className="form__group">
-          <label htmlFor="lastname">Apellido</label>
+          <label htmlFor="lastname">Apellidos</label>
           <input id="lastname" name="lastname" value={form.lastname} onChange={handleChange} />
           {showError("lastname")}
         </div>
@@ -168,7 +196,7 @@ export function StudentForm({ initialStudent }: StudentFormProps) {
         <div className="form__group">
           <label htmlFor="section">Seccion</label>
           <select id="section" name="section" value={form.section} onChange={handleChange}>
-            {SECTIONS.map((section) => (
+            {allowedSections.map((section) => (
               <option key={section} value={section}>
                 {section}
               </option>

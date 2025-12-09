@@ -17,8 +17,8 @@ export function Navbar({ onToggleSidebar }: { onToggleSidebar: () => void }) {
       </button>
 
       <div className="navbar__brand">
-        <div>StudentApp | Gestion Academica</div>
-        <small className="navbar__subtitle">Control de docentes, cursos y matriculas</small>
+        <div>StudentApp | Gestión Académica</div>
+        <small className="navbar__subtitle">Control de docentes, cursos y matrículas</small>
       </div>
 
       <div className="navbar__user">

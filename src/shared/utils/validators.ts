@@ -1,6 +1,17 @@
 import type { Student } from "../../features/students/types/Student";
 import type { Teacher } from "../../features/teachers/types/Teacher";
 
+const ALLOWED_SECTIONS: Array<"A" | "B" | "C" | "D"> = ["A", "B", "C", "D"];
+const ALLOWED_TEACHER_SECTIONS: Teacher["section"][] = ["A", "B", "C", "D", "ROTATIVO"];
+const ALLOWED_SHIFTS: Array<"MANANA" | "TARDE"> = ["MANANA", "TARDE"];
+const ALLOWED_SPECIALTIES: Teacher["specialty"][] = [
+  "Primaria General",
+  "Idiomas",
+  "Artes",
+  "Deportes",
+  "Computo",
+];
+
 export function validateStudent(student: Student): Record<string, string> {
   const errors: Record<string, string> = {};
 
@@ -36,12 +47,20 @@ export function validateStudent(student: Student): Record<string, string> {
     errors.grade = "El grado debe estar entre 1 y 6.";
   }
 
-  if (!student.section || !["A", "B", "C", "D"].includes(student.section)) {
+  if (!student.section || !ALLOWED_SECTIONS.includes(student.section)) {
     errors.section = "La seccion es obligatoria.";
   }
 
-  if (!student.shift || !["MANANA", "TARDE", "NOCHE"].includes(student.shift)) {
+  if (!student.shift || !ALLOWED_SHIFTS.includes(student.shift)) {
     errors.shift = "El turno es obligatorio.";
+  }
+
+  if (student.shift === "MANANA" && !["A", "B"].includes(student.section)) {
+    errors.section = "Las secciones A y B solo son validas para el turno MANANA.";
+  }
+
+  if (student.shift === "TARDE" && !["C", "D"].includes(student.section)) {
+    errors.section = "Las secciones C y D solo son validas para el turno TARDE.";
   }
 
   return errors;
@@ -55,8 +74,10 @@ export function validateTeacher(teacher: Teacher) {
   if (!teacher.lastname.trim()) errors.lastname = "Apellido obligatorio";
   if (!teacher.email.includes("@")) errors.email = "Correo invalido";
   if (!teacher.birthdate) errors.birthdate = "Fecha requerida";
-  if (teacher.grade < 1 || teacher.grade > 6) errors.grade = "Grado invalido";
-  if (!["A", "B", "C", "D"].includes(teacher.section)) errors.section = "Seccion invalida";
+  if (teacher.grade !== "ALL" && (teacher.grade < 1 || teacher.grade > 6)) errors.grade = "Grado invalido";
+  if (!ALLOWED_SPECIALTIES.includes(teacher.specialty)) errors.specialty = "Especialidad invalida";
+  if (!ALLOWED_TEACHER_SECTIONS.includes(teacher.section)) errors.section = "Seccion invalida";
 
   return errors;
 }
+

@@ -112,7 +112,7 @@ export function DashboardPage() {
           <p className="eyebrow">Panel de control</p>
           <h1 className="page-title">Bienvenido a StudentApp</h1>
           <p className="page-subtitle">
-            Visibilidad rapida de matriculas, cursos y docentes. Los accesos respetan tu rol.
+            Visibilidad rápida de matrículas, cursos y docentes. Los accesos respetan tu rol.
           </p>
         </div>
       </header>
@@ -122,13 +122,13 @@ export function DashboardPage() {
         <StatCard label="Docentes activos" value={stats.activeTeachers.toString()} />
         <StatCard label="Cursos activos" value={stats.activeCourses.toString()} />
         <StatCard
-          label="Matriculas registradas"
+          label="Matrículas registradas"
           value={stats.totalEnrollments.toString()}
           helper={stats.helper}
         />
       </div>
 
-      <Section title="Insights rapidos">
+      <Section title="Insights rápidos">
         {insights.length ? (
           <ul className="list">
             {insights.map((item) => (
@@ -142,7 +142,7 @@ export function DashboardPage() {
         )}
       </Section>
 
-      <Section title="Ayuda rapida">
+      <Section title="Ayuda rápida">
         <div className="card">
           <p className="eyebrow">Roles de prueba</p>
           <p>Admin: admin@colegio.com / 123456</p>

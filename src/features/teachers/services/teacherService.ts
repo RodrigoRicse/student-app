@@ -33,6 +33,14 @@ async function deleteByDni(dni: string) {
   const existing = await getByDni(dni);
   if (!existing) throw new Error("Docente no encontrado");
 
+  // borrar el usuario vinculado al docente, si existe
+  const { data: users } = await axios.get<Array<{ id: string }>>(
+    `${USERS_URL}?teacherDni=${existing.dni}`
+  );
+  if (users.length > 0) {
+    await axios.delete(`${USERS_URL}/${users[0].id}`);
+  }
+
   await axios.delete(`${API_URL}/${existing.id}`);
 }
 

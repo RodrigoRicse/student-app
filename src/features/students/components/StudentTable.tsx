@@ -23,7 +23,7 @@ export function StudentTable({ students, onDelete, canEdit, canDelete }: Student
             <th>Sexo</th>
             <th>Nivel</th>
             <th>Grado</th>
-            <th>Seccion</th>
+            <th>Sección</th>
             <th>Turno</th>
             <th>Estado</th>
             {showActions && <th className="table__actions-col">Acciones</th>}

@@ -8,19 +8,17 @@ interface Props {
   initialTeacher?: Teacher | null;
 }
 
-const GRADES = [1, 2, 3, 4, 5, 6];
-const SECTIONS = ["A", "B", "C", "D"];
-const SUBJECTS = [
-  "Matematica",
-  "Comunicacion",
-  "Ciencia y Tecnologia",
-  "Personal Social",
-  "Ingles",
-  "Arte",
-  "Educacion Fisica"
+const GRADES: Array<Teacher["grade"]> = [1, 2, 3, 4, 5, 6, "ALL"];
+const SECTIONS: Array<Teacher["section"]> = ["A", "B", "C", "D", "ROTATIVO"];
+const SUBJECTS: Teacher["specialty"][] = [
+  "Primaria General",
+  "Idiomas",
+  "Artes",
+  "Deportes",
+  "Computo",
 ];
 
-const ROLES = ["DIRECTOR", "DOCENTE"];
+const ROLES = ["DIRECTOR", "DOCENTE"] as const;
 
 export function TeacherForm({ initialTeacher }: Props) {
   const navigate = useNavigate();
@@ -34,7 +32,7 @@ export function TeacherForm({ initialTeacher }: Props) {
     email: initialTeacher?.email ?? "",
     sex: initialTeacher?.sex ?? "M",
     birthdate: initialTeacher?.birthdate ?? "",
-    specialty: initialTeacher?.specialty ?? "Comunicacion",
+    specialty: initialTeacher?.specialty ?? "Primaria General",
     grade: initialTeacher?.grade ?? 1,
     section: initialTeacher?.section ?? "A",
     role: initialTeacher?.role ?? "DOCENTE",
@@ -49,7 +47,10 @@ export function TeacherForm({ initialTeacher }: Props) {
 
     setForm((prev) => ({
       ...prev,
-      [name]: name === "grade" ? Number(value) : value,
+      [name]:
+        name === "grade"
+          ? (value === "ALL" ? "ALL" : Number(value))
+          : value,
     }));
   };
 
@@ -109,14 +110,14 @@ export function TeacherForm({ initialTeacher }: Props) {
 
         {/* NOMBRE */}
         <div className="form__group">
-          <label>Nombre</label>
+          <label>Nombres</label>
           <input name="name" value={form.name} onChange={handleChange} />
           {showError("name")}
         </div>
 
         {/* APELLIDO */}
         <div className="form__group">
-          <label>Apellido</label>
+          <label>Apellidos</label>
           <input name="lastname" value={form.lastname} onChange={handleChange} />
           {showError("lastname")}
         </div>
@@ -149,9 +150,12 @@ export function TeacherForm({ initialTeacher }: Props) {
           <label>Especialidad</label>
           <select name="specialty" value={form.specialty} onChange={handleChange}>
             {SUBJECTS.map((s) => (
-              <option key={s}>{s}</option>
+              <option key={s} value={s}>
+                {s}
+              </option>
             ))}
           </select>
+          {showError("specialty")}
         </div>
 
         {/* GRADO */}
@@ -159,7 +163,7 @@ export function TeacherForm({ initialTeacher }: Props) {
           <label>Grado asignado</label>
           <select name="grade" value={form.grade} onChange={handleChange}>
             {GRADES.map((g) => (
-              <option key={g} value={g}>{g}</option>
+              <option key={g} value={g}>{g === "ALL" ? "Todos" : g}</option>
             ))}
           </select>
         </div>
@@ -169,9 +173,10 @@ export function TeacherForm({ initialTeacher }: Props) {
           <label>Seccion</label>
           <select name="section" value={form.section} onChange={handleChange}>
             {SECTIONS.map((s) => (
-              <option key={s} value={s}>{s}</option>
+              <option key={s} value={s}>{s === "ROTATIVO" ? "Rotativo" : s}</option>
             ))}
           </select>
+          {showError("section")}
         </div>
 
         {/* ROL */}
@@ -206,3 +211,5 @@ export function TeacherForm({ initialTeacher }: Props) {
     </form>
   );
 }
+
+

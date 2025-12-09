@@ -13,8 +13,8 @@ export interface Student {
 
   level: "Primaria"; // fijo
   grade: number; // 1-6
-  section: string; // A/B/C/D
-  shift: "MANANA" | "TARDE" | "NOCHE";
+  section: "A" | "B" | "C" | "D"; // A/B/C/D
+  shift: "MANANA" | "TARDE";
 
   status: "ACTIVO" | "INACTIVO";
 }

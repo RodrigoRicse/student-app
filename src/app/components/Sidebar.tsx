@@ -15,7 +15,7 @@ export function Sidebar({ open }: { open: boolean }) {
       <div className="sidebar__divider" />
 
       {/* SECCION */}
-      <span className="sidebar__section">Modulos</span>
+      <span className="sidebar__section">Módulos</span>
 
       <nav className="sidebar__nav">
         <Link to="/" className="sidebar__link">
@@ -61,7 +61,7 @@ export function Sidebar({ open }: { open: boolean }) {
         {isAdmin && (
           <Link to="/schedules" className="sidebar__link">
             <i className="bi bi-card-checklist"></i>
-            Asignacion
+            Asignación
           </Link>
         )}
 
@@ -69,15 +69,15 @@ export function Sidebar({ open }: { open: boolean }) {
         {isAdmin && (
           <Link to="/enrollments" className="sidebar__link">
             <i className="bi bi-clipboard2-plus"></i>
-            Matriculas
+            Matrículas
           </Link>
         )}
       </nav>
 
       <div className="sidebar__context">
-        <p className="sidebar__context-title">Panel Academico</p>
+        <p className="sidebar__context-title">Panel Académico</p>
         <p className="sidebar__context-text">
-          Gestiona docentes, horarios, matriculas y notas en un solo lugar. Los docentes solo ven sus alumnos y cursos asignados.
+          Gestiona docentes, horarios, matrículas y notas en un solo lugar. Los docentes solo ven sus alumnos y cursos asignados.
         </p>
       </div>
     </aside>

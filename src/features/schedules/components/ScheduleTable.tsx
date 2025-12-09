@@ -12,7 +12,6 @@ interface Props {
 const SHIFT_LABEL: Record<string, string> = {
   MANANA: "Manana",
   TARDE: "Tarde",
-  NOCHE: "Noche",
 };
 
 export function ScheduleTable({ schedules, teachers, courses, onDelete }: Props) {
@@ -25,6 +24,9 @@ export function ScheduleTable({ schedules, teachers, courses, onDelete }: Props)
     ids
       .map((id) => courses.find((c) => c.id === id)?.name ?? id)
       .join(", ");
+
+  const gradeLabel = (grade: Schedule["grade"]) => (grade === "ALL" ? "Todos" : grade);
+  const sectionLabel = (section: Schedule["section"]) => (section === "ROTATIVO" ? "Rotativo" : section);
 
   return (
     <div className="table-wrapper">
@@ -52,8 +54,8 @@ export function ScheduleTable({ schedules, teachers, courses, onDelete }: Props)
             <tr key={sch.id}>
               <td>{teacherName(sch.teacherDni)}</td>
               <td>{SHIFT_LABEL[sch.shift]}</td>
-              <td>{sch.grade}</td>
-              <td>{sch.section}</td>
+              <td>{gradeLabel(sch.grade)}</td>
+              <td>{sectionLabel(sch.section)}</td>
               <td>{courseNames(sch.courses)}</td>
               <td className="table__actions">
                 {sch.id && (

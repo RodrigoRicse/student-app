@@ -9,9 +9,9 @@ export interface Teacher {
   sex: "M" | "F";
 
   birthdate: string;
-  specialty: string; // area que ensena
-  grade: number; // Grado asignado 1-6
-  section: string; // A-D
+  specialty: "Primaria General" | "Idiomas" | "Artes" | "Deportes" | "Computo";
+  grade: number | "ALL"; // 1-6 o TODOS
+  section: "A" | "B" | "C" | "D" | "ROTATIVO"; // A-D o rotativo
 
   role: "DIRECTOR" | "DOCENTE";
   status: "ACTIVO" | "INACTIVO";

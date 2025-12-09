@@ -14,9 +14,8 @@ interface Props {
 }
 
 const SHIFT_LABEL: Record<string, string> = {
-  MANANA: "Manana",
+  MANANA: "Mañana",
   TARDE: "Tarde",
-  NOCHE: "Noche",
 };
 
 export function EnrollmentTable({ enrollments, schedules, students, teachers, courses, onDelete }: Props) {

@@ -26,9 +26,8 @@ export function EnrollmentForm({ schedules, students, teachers, courses, onSaved
   const [shiftFilter, setShiftFilter] = useState<string>("");
   const SHIFT_OPTIONS = [
     { value: "", label: "Todos" },
-    { value: "MANANA", label: "Manana" },
+    { value: "MANANA", label: "Mañana" },
     { value: "TARDE", label: "Tarde" },
-    { value: "NOCHE", label: "Noche" },
   ];
   const [enrollments, setEnrollments] = useState<Enrollment[]>([]);
 
@@ -146,7 +145,7 @@ export function EnrollmentForm({ schedules, students, teachers, courses, onSaved
     const student = students.find((s) => s.dni === studentDni);
     if (student) {
       if (student.grade !== selectedSchedule.grade || student.section !== selectedSchedule.section) {
-        alert("El alumno no pertenece al grado y seccion del horario seleccionado.");
+        alert("El alumno no pertenece al grado y sección del horario seleccionado.");
         return;
       }
     }
@@ -240,7 +239,7 @@ export function EnrollmentForm({ schedules, students, teachers, courses, onSaved
         </div>
 
         <div className="form__group">
-          <label>Filtrar por seccion</label>
+          <label>Filtrar por sección</label>
           <select value={sectionFilter} onChange={(e) => setSectionFilter(e.target.value)}>
             <option value="">Todas</option>
             {["A", "B", "C", "D"].map((s) => (
@@ -270,7 +269,7 @@ export function EnrollmentForm({ schedules, students, teachers, courses, onSaved
 
       <div className="card" style={{ marginTop: 12, padding: 12 }}>
         {filteredSchedules.length === 0 ? (
-          <p>No hay horarios disponibles para este turno/grado/seccion.</p>
+          <p>No hay horarios disponibles para este turno/grado/sección.</p>
         ) : (
           <div>
             <p style={{ margin: 0, color: "#cbd5e1" }}>Horarios disponibles:</p>
@@ -297,7 +296,7 @@ export function EnrollmentForm({ schedules, students, teachers, courses, onSaved
                 <th>Asignado a</th>
                 <th>Turno</th>
                 <th>Grado</th>
-                <th>Seccion</th>
+                <th>Sección</th>
               </tr>
             </thead>
             <tbody>
@@ -326,52 +325,52 @@ export function EnrollmentForm({ schedules, students, teachers, courses, onSaved
 
       {selectedSchedule && (
         <div className="table-wrapper" style={{ marginTop: 12 }}>
-            <div className="page__header" style={{ padding: 0, marginBottom: 8 }}>
-              <h3 className="page-title" style={{ fontSize: "1rem" }}>Alumnos del salon (grado {selectedSchedule.grade} - seccion {selectedSchedule.section})</h3>
-              <div style={{ display: "flex", gap: 8 }}>
-                <button
-                  className="btn btn--small"
-                  onClick={handleEnrollAll}
-                  disabled={
-                    saving ||
-                    studentsFiltered.length === 0 ||
-                    studentsFiltered.every((st) => enrolledSet.has(st.dni))
-                  }
-                >
-                  Matricular a todos
-                </button>
-                <button
-                  className="btn btn--small btn--danger"
-                  onClick={async () => {
-                    setSaving(true);
-                    try {
-                      for (const e of enrollments.filter((en) => String(en.scheduleId) === String(selectedSchedule.id))) {
-                        if (e.id) await enrollmentService.remove(e.id);
-                      }
-                      await loadEnrollments();
-                      onSaved();
-                    } finally {
-                      setSaving(false);
+          <div className="page__header" style={{ padding: 0, marginBottom: 8 }}>
+            <h3 className="page-title" style={{ fontSize: "1rem" }}>Alumnos del salon (grado {selectedSchedule.grade} - seccion {selectedSchedule.section})</h3>
+            <div style={{ display: "flex", gap: 8 }}>
+              <button
+                className="btn btn--small"
+                onClick={handleEnrollAll}
+                disabled={
+                  saving ||
+                  studentsFiltered.length === 0 ||
+                  studentsFiltered.every((st) => enrolledSet.has(st.dni))
+                }
+              >
+                Matricular a todos
+              </button>
+              <button
+                className="btn btn--small btn--danger"
+                onClick={async () => {
+                  setSaving(true);
+                  try {
+                    for (const e of enrollments.filter((en) => String(en.scheduleId) === String(selectedSchedule.id))) {
+                      if (e.id) await enrollmentService.remove(e.id);
                     }
-                  }}
+                    await loadEnrollments();
+                    onSaved();
+                  } finally {
+                    setSaving(false);
+                  }
+                }}
                 disabled={
                   saving ||
                   enrollments.filter((e) => String(e.scheduleId) === String(selectedSchedule.id)).length === 0
                 }
-                >
-                  Quitar todos
-                </button>
-              </div>
+              >
+                Quitar todos
+              </button>
             </div>
+          </div>
           <table className="table table--compact">
             <thead>
               <tr>
                 <th>DNI</th>
                 <th>Nombre</th>
                 <th>Grado</th>
-                <th>Seccion</th>
+                <th>Sección</th>
                 <th>Turno</th>
-                <th>Accion</th>
+                <th>Acción</th>
               </tr>
             </thead>
             <tbody>
