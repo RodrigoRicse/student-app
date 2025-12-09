@@ -60,6 +60,11 @@ export function EnrollmentForm({ schedules, students, teachers, courses, onSaved
     [filteredSchedules, form.scheduleId]
   );
 
+  const isFlexibleGrade = selectedSchedule?.grade === "ALL";
+  const isFlexibleSection = selectedSchedule?.section === "ROTATIVO";
+  const gradeLabelSelected = selectedSchedule ? (selectedSchedule.grade === "ALL" ? "Todos" : selectedSchedule.grade) : "";
+  const sectionLabelSelected = selectedSchedule ? (selectedSchedule.section === "ROTATIVO" ? "Rotativo" : selectedSchedule.section) : "";
+
   const studentsFiltered = useMemo(
     () =>
       students
@@ -109,8 +114,8 @@ export function EnrollmentForm({ schedules, students, teachers, courses, onSaved
   const handleScheduleChange = (value: string) => {
     const sch = filteredSchedules.find((s) => String(s.id) === value);
     if (sch) {
-      setGradeFilter(String(sch.grade));
-      setSectionFilter(sch.section);
+      setGradeFilter(sch.grade === "ALL" ? "" : String(sch.grade));
+      setSectionFilter(sch.section === "ROTATIVO" ? "" : sch.section);
       setShiftFilter(sch.shift);
     }
     setForm((prev) => ({ ...prev, scheduleId: value }));
@@ -144,8 +149,12 @@ export function EnrollmentForm({ schedules, students, teachers, courses, onSaved
     }
     const student = students.find((s) => s.dni === studentDni);
     if (student) {
-      if (student.grade !== selectedSchedule.grade || student.section !== selectedSchedule.section) {
-        alert("El alumno no pertenece al grado y sección del horario seleccionado.");
+      if (!isFlexibleGrade && student.grade !== selectedSchedule.grade) {
+        alert("El alumno no pertenece al grado del horario seleccionado.");
+        return;
+      }
+      if (!isFlexibleSection && student.section !== selectedSchedule.section) {
+        alert("El alumno no pertenece a la secci?n del horario seleccionado.");
         return;
       }
     }
@@ -181,7 +190,8 @@ export function EnrollmentForm({ schedules, students, teachers, courses, onSaved
     );
     const toEnroll = studentsFiltered
       .filter((st) => !already.has(st.dni))
-      .filter((st) => st.grade === selectedSchedule.grade && st.section === selectedSchedule.section);
+      .filter((st) => (isFlexibleGrade ? true : st.grade === selectedSchedule.grade))
+      .filter((st) => (isFlexibleSection ? true : st.section === selectedSchedule.section));
     if (!toEnroll.length) return;
     setSaving(true);
     try {
@@ -326,7 +336,9 @@ export function EnrollmentForm({ schedules, students, teachers, courses, onSaved
       {selectedSchedule && (
         <div className="table-wrapper" style={{ marginTop: 12 }}>
           <div className="page__header" style={{ padding: 0, marginBottom: 8 }}>
-            <h3 className="page-title" style={{ fontSize: "1rem" }}>Alumnos del salon (grado {selectedSchedule.grade} - seccion {selectedSchedule.section})</h3>
+            <h3 className="page-title" style={{ fontSize: "1rem" }}>
+              Alumnos del salon (grado {gradeLabelSelected} - seccion {sectionLabelSelected})
+            </h3>
             <div style={{ display: "flex", gap: 8 }}>
               <button
                 className="btn btn--small"
@@ -419,3 +431,4 @@ export function EnrollmentForm({ schedules, students, teachers, courses, onSaved
     </form>
   );
 }
+
