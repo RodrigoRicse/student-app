@@ -6683,5 +6683,131 @@
       "id": 33
     }
   ],
-  "enrollments": []
+  "enrollments": [
+    {
+      "scheduleId": 2,
+      "studentDni": "82345601",
+      "id": 1
+    },
+    {
+      "scheduleId": 2,
+      "studentDni": "82345602",
+      "id": 2
+    },
+    {
+      "scheduleId": 2,
+      "studentDni": "82345603",
+      "id": 3
+    },
+    {
+      "scheduleId": 2,
+      "studentDni": "82345604",
+      "id": 4
+    },
+    {
+      "scheduleId": 2,
+      "studentDni": "82345605",
+      "id": 5
+    },
+    {
+      "scheduleId": 2,
+      "studentDni": "82345606",
+      "id": 6
+    },
+    {
+      "scheduleId": 2,
+      "studentDni": "82345607",
+      "id": 7
+    },
+    {
+      "scheduleId": 2,
+      "studentDni": "82345608",
+      "id": 8
+    },
+    {
+      "scheduleId": 2,
+      "studentDni": "82345609",
+      "id": 9
+    },
+    {
+      "scheduleId": 2,
+      "studentDni": "82345610",
+      "id": 10
+    },
+    {
+      "scheduleId": 2,
+      "studentDni": "82345611",
+      "id": 11
+    },
+    {
+      "scheduleId": 2,
+      "studentDni": "82345612",
+      "id": 12
+    },
+    {
+      "scheduleId": 2,
+      "studentDni": "82345613",
+      "id": 13
+    },
+    {
+      "scheduleId": 2,
+      "studentDni": "82345614",
+      "id": 14
+    },
+    {
+      "scheduleId": 2,
+      "studentDni": "82345615",
+      "id": 15
+    },
+    {
+      "scheduleId": 2,
+      "studentDni": "82345616",
+      "id": 16
+    },
+    {
+      "scheduleId": 2,
+      "studentDni": "82345617",
+      "id": 17
+    },
+    {
+      "scheduleId": 2,
+      "studentDni": "82345618",
+      "id": 18
+    },
+    {
+      "scheduleId": 2,
+      "studentDni": "82345619",
+      "id": 19
+    },
+    {
+      "scheduleId": 2,
+      "studentDni": "82345620",
+      "id": 20
+    },
+    {
+      "scheduleId": 2,
+      "studentDni": "82345621",
+      "id": 21
+    },
+    {
+      "scheduleId": 2,
+      "studentDni": "82345622",
+      "id": 22
+    },
+    {
+      "scheduleId": 2,
+      "studentDni": "82345623",
+      "id": 23
+    },
+    {
+      "scheduleId": 2,
+      "studentDni": "82345624",
+      "id": 24
+    },
+    {
+      "scheduleId": 2,
+      "studentDni": "82345625",
+      "id": 25
+    }
+  ]
 }
