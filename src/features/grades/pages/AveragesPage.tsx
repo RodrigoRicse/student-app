@@ -172,11 +172,11 @@ export function AveragesPage() {
                 : "";
             const res = avg ? (Number(avg) >= PASS_THRESHOLD ? "A" : "R") : "";
 
-            return `<td>${p1}</td><td>${p2}</td><td>${p3}</td><td>${p4}</td><td>${avg}</td><td>${res}</td>`;
+            return `<td class="eval-col">${p1}</td><td class="eval-col">${p2}</td><td class="eval-col">${p3}</td><td class="eval-col">${p4}</td><td class="eval-col">${avg}</td><td class="eval-col">${res}</td>`;
           })
           .join("");
 
-        return `<tr><td>${courseName}</td>${termCells}</tr>`;
+        return `<tr><td class="course-col">${courseName}</td>${termCells}</tr>`;
       })
       .join("");
 
@@ -198,12 +198,17 @@ export function AveragesPage() {
             .sheet { max-width: 1100px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 24px 24px 16px; box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08); }
             h1 { margin-bottom: 6px; }
             h3 { margin: 4px 0 10px; }
-            table { width: 100%; border-collapse: collapse; margin-top: 12px; border: 1px solid #cbd5e1; border-radius: 10px; overflow: hidden; }
-            th, td { border: 1px solid #cbd5e1; padding: 8px 6px; text-align: center; font-size: 12px; }
+            table { width: 100%; border-collapse: collapse; margin-top: 12px; border: 1px solid #cbd5e1; border-radius: 10px; overflow: hidden; table-layout: fixed; }
+            th, td { border: 1px solid #cbd5e1; padding: 9px 6px; text-align: center; font-size: 12px; }
             th { background: #e6eefc; color: #0f172a; font-weight: 700; }
             thead tr:first-child th { background: #d7e5ff; font-size: 13px; }
-            td:first-child, th:first-child { text-align: left; width: 180px; }
-            tfoot td { background: #e6f3ff; font-weight: 700; text-align: left; letter-spacing: 0.15px; }
+            .course-col { text-align: left; width: 22%; font-weight: 600; }
+            .eval-col { width: 4.3%; }
+            tfoot td { background: #e6f3ff; letter-spacing: 0.15px; }
+            .summary { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; font-weight: 600; color: #0f172a; }
+            .summary-label { font-weight: 700; margin-right: 2px; }
+            .pill { padding: 6px 10px; border-radius: 8px; background: #dbeafe; border: 1px solid #bfdbfe; }
+            .pill.final { background: #cfe0ff; border-color: #a5c9f5; }
           </style>
         </head>
         <body>
@@ -212,24 +217,34 @@ export function AveragesPage() {
             <h3>${student.name} ${student.lastname} | DNI: ${student.dni}</h3>
             <p style="margin-bottom: 12px;">Grado ${student.grade} - Seccion ${student.section}</p>
             <table>
+              <colgroup>
+                <col class="course-col" />
+                ${'<col class="eval-col" />'.repeat(18)}
+              </colgroup>
               <thead>
                 <tr>
-                  <th rowspan="2">Curso</th>
+                  <th class="course-col" rowspan="2">Curso</th>
                   <th colspan="6">1er Bimestre</th>
                   <th colspan="6">2do Bimestre</th>
                   <th colspan="6">3er Bimestre</th>
                 </tr>
                 <tr>
-                  <th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>PROM</th><th>R/A</th>
-                  <th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>PROM</th><th>R/A</th>
-                  <th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>PROM</th><th>R/A</th>
+                  <th class="eval-col">P1</th><th class="eval-col">P2</th><th class="eval-col">P3</th><th class="eval-col">P4</th><th class="eval-col">PROM</th><th class="eval-col">R/A</th>
+                  <th class="eval-col">P1</th><th class="eval-col">P2</th><th class="eval-col">P3</th><th class="eval-col">P4</th><th class="eval-col">PROM</th><th class="eval-col">R/A</th>
+                  <th class="eval-col">P1</th><th class="eval-col">P2</th><th class="eval-col">P3</th><th class="eval-col">P4</th><th class="eval-col">PROM</th><th class="eval-col">R/A</th>
                 </tr>
               </thead>
               <tbody>${rowsHtml}</tbody>
               <tfoot>
                 <tr>
                   <td colspan="19">
-                    Resumen: Bim1 ${avgPerTerm[0]} | Bim2 ${avgPerTerm[1]} | Bim3 ${avgPerTerm[2]} | Promedio final ${finalAvg}
+                    <div class="summary">
+                      <span class="summary-label">Resumen</span>
+                      <span class="pill">Bim1: ${avgPerTerm[0]}</span>
+                      <span class="pill">Bim2: ${avgPerTerm[1]}</span>
+                      <span class="pill">Bim3: ${avgPerTerm[2]}</span>
+                      <span class="pill final">Promedio final: ${finalAvg}</span>
+                    </div>
                   </td>
                 </tr>
               </tfoot>
@@ -250,7 +265,7 @@ export function AveragesPage() {
   };
 
   const handlePrintSalon = () => {
-    const studentsList = visibleStudents.filter((s) => hasNotes(s.dni));
+    const studentsList = filteredStudents.filter((s) => hasNotes(s.dni));
     if (!studentsList.length) {
       alert("No hay alumnos con notas en este salon.");
       return;
@@ -282,10 +297,10 @@ export function AveragesPage() {
               const p4 = fmt(byEval.get(4));
               const avg = items.length > 0 ? (items.reduce((acc, g) => acc + g.score, 0) / items.length).toFixed(2) : "";
               const res = avg ? (Number(avg) >= PASS_THRESHOLD ? "A" : "R") : "";
-              return `<td>${p1}</td><td>${p2}</td><td>${p3}</td><td>${p4}</td><td>${avg}</td><td>${res}</td>`;
+              return `<td class="eval-col">${p1}</td><td class="eval-col">${p2}</td><td class="eval-col">${p3}</td><td class="eval-col">${p4}</td><td class="eval-col">${avg}</td><td class="eval-col">${res}</td>`;
             }).join("");
 
-            return `<tr><td>${courseName}</td>${termCells}</tr>`;
+            return `<tr><td class="course-col">${courseName}</td>${termCells}</tr>`;
           })
           .join("");
 
@@ -303,24 +318,34 @@ export function AveragesPage() {
             <h2>${student.name} ${student.lastname} | DNI: ${student.dni}</h2>
             <p>Grado ${student.grade} - Seccion ${student.section}</p>
             <table>
+              <colgroup>
+                <col class="course-col" />
+                ${'<col class="eval-col" />'.repeat(18)}
+              </colgroup>
               <thead>
                 <tr>
-                  <th rowspan="2">Curso</th>
+                  <th class="course-col" rowspan="2">Curso</th>
                   <th colspan="6">1er Bimestre</th>
                   <th colspan="6">2do Bimestre</th>
                   <th colspan="6">3er Bimestre</th>
                 </tr>
                 <tr>
-                  <th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>PROM</th><th>R/A</th>
-                  <th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>PROM</th><th>R/A</th>
-                  <th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>PROM</th><th>R/A</th>
+                  <th class="eval-col">P1</th><th class="eval-col">P2</th><th class="eval-col">P3</th><th class="eval-col">P4</th><th class="eval-col">PROM</th><th class="eval-col">R/A</th>
+                  <th class="eval-col">P1</th><th class="eval-col">P2</th><th class="eval-col">P3</th><th class="eval-col">P4</th><th class="eval-col">PROM</th><th class="eval-col">R/A</th>
+                  <th class="eval-col">P1</th><th class="eval-col">P2</th><th class="eval-col">P3</th><th class="eval-col">P4</th><th class="eval-col">PROM</th><th class="eval-col">R/A</th>
                 </tr>
               </thead>
             <tbody>${rowsHtml}</tbody>
             <tfoot>
               <tr>
                 <td colspan="19">
-                  Resumen — Bim1: ${avgPerTerm[0]} | Bim2: ${avgPerTerm[1]} | Bim3: ${avgPerTerm[2]} | Promedio final: ${finalAvg}
+                  <div class="summary">
+                    <span class="summary-label">Resumen</span>
+                    <span class="pill">Bim1: ${avgPerTerm[0]}</span>
+                    <span class="pill">Bim2: ${avgPerTerm[1]}</span>
+                    <span class="pill">Bim3: ${avgPerTerm[2]}</span>
+                    <span class="pill final">Promedio final: ${finalAvg}</span>
+                  </div>
                 </td>
               </tr>
             </tfoot>
@@ -340,12 +365,17 @@ export function AveragesPage() {
             h1 { margin-bottom: 14px; }
             h2 { margin: 6px 0 2px; }
             p { margin: 0 0 6px; }
-            table { width: 100%; border-collapse: collapse; margin-top: 10px; border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; }
-            th, td { border: 1px solid #cbd5e1; padding: 8px 6px; text-align: center; font-size: 12px; }
-            th { background: #e6eefc; }
+            table { width: 100%; border-collapse: collapse; margin-top: 10px; border: 1px solid #cbd5e1; border-radius: 10px; overflow: hidden; table-layout: fixed; }
+            th, td { border: 1px solid #cbd5e1; padding: 9px 6px; text-align: center; font-size: 12px; }
+            th { background: #e6eefc; color: #0f172a; font-weight: 700; }
             thead tr:first-child th { background: #d7e5ff; font-size: 13px; }
-            td:first-child, th:first-child { text-align: left; width: 180px; }
-            tfoot td { background: #e6f3ff; font-weight: 700; text-align: left; letter-spacing: 0.15px; }
+            .course-col { text-align: left; width: 22%; font-weight: 600; }
+            .eval-col { width: 4.3%; }
+            tfoot td { background: #e6f3ff; letter-spacing: 0.15px; }
+            .summary { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; font-weight: 600; color: #0f172a; }
+            .summary-label { font-weight: 700; margin-right: 2px; }
+            .pill { padding: 6px 10px; border-radius: 8px; background: #dbeafe; border: 1px solid #bfdbfe; }
+            .pill.final { background: #cfe0ff; border-color: #a5c9f5; }
           </style>
         </head>
         <body>

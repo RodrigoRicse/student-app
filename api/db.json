@@ -6992,6 +6992,330 @@
       "score": 19,
       "comment": "Excelente!",
       "id": 92
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "matematica",
+      "term": 1,
+      "evaluation": 1,
+      "score": 14,
+      "comment": "",
+      "id": 93
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "matematica",
+      "term": 1,
+      "evaluation": 2,
+      "score": 13,
+      "comment": "",
+      "id": 94
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "matematica",
+      "term": 1,
+      "evaluation": 3,
+      "score": 14,
+      "comment": "",
+      "id": 95
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "matematica",
+      "term": 1,
+      "evaluation": 4,
+      "score": 15,
+      "comment": "",
+      "id": 96
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "razonamiento-matematico",
+      "term": 1,
+      "evaluation": 1,
+      "score": 13,
+      "comment": "",
+      "id": 97
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "razonamiento-matematico",
+      "term": 1,
+      "evaluation": 2,
+      "score": 14,
+      "comment": "",
+      "id": 98
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "razonamiento-matematico",
+      "term": 1,
+      "evaluation": 3,
+      "score": 15,
+      "comment": "",
+      "id": 99
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "razonamiento-matematico",
+      "term": 1,
+      "evaluation": 4,
+      "score": 11,
+      "comment": "",
+      "id": 100
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "comunicacion",
+      "term": 1,
+      "evaluation": 1,
+      "score": 14,
+      "comment": "",
+      "id": 101
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "comunicacion",
+      "term": 1,
+      "evaluation": 2,
+      "score": 15,
+      "comment": "",
+      "id": 102
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "comunicacion",
+      "term": 1,
+      "evaluation": 3,
+      "score": 16,
+      "comment": "",
+      "id": 103
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "comunicacion",
+      "term": 1,
+      "evaluation": 4,
+      "score": 14,
+      "comment": "",
+      "id": 104
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "razonamiento-verbal",
+      "term": 1,
+      "evaluation": 1,
+      "score": 13,
+      "comment": "",
+      "id": 105
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "razonamiento-verbal",
+      "term": 1,
+      "evaluation": 2,
+      "score": 13,
+      "comment": "",
+      "id": 106
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "razonamiento-verbal",
+      "term": 1,
+      "evaluation": 3,
+      "score": 13,
+      "comment": "",
+      "id": 107
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "razonamiento-verbal",
+      "term": 1,
+      "evaluation": 4,
+      "score": 14,
+      "comment": "",
+      "id": 108
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "plan-lector",
+      "term": 1,
+      "evaluation": 1,
+      "score": 15,
+      "comment": "",
+      "id": 109
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "plan-lector",
+      "term": 1,
+      "evaluation": 2,
+      "score": 14,
+      "comment": "",
+      "id": 110
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "plan-lector",
+      "term": 1,
+      "evaluation": 3,
+      "score": 15,
+      "comment": "",
+      "id": 111
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "plan-lector",
+      "term": 1,
+      "evaluation": 4,
+      "score": 14,
+      "comment": "",
+      "id": 112
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "personal-social",
+      "term": 1,
+      "evaluation": 1,
+      "score": 13,
+      "comment": "",
+      "id": 113
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "personal-social",
+      "term": 1,
+      "evaluation": 2,
+      "score": 13,
+      "comment": "",
+      "id": 114
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "personal-social",
+      "term": 1,
+      "evaluation": 3,
+      "score": 13,
+      "comment": "",
+      "id": 115
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "personal-social",
+      "term": 1,
+      "evaluation": 4,
+      "score": 14,
+      "comment": "",
+      "id": 116
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "ciencia-tecnologia",
+      "term": 1,
+      "evaluation": 1,
+      "score": 13,
+      "comment": "",
+      "id": 117
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "ciencia-tecnologia",
+      "term": 1,
+      "evaluation": 2,
+      "score": 14,
+      "comment": "",
+      "id": 118
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "ciencia-tecnologia",
+      "term": 1,
+      "evaluation": 3,
+      "score": 14,
+      "comment": "",
+      "id": 119
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "ciencia-tecnologia",
+      "term": 1,
+      "evaluation": 4,
+      "score": 14,
+      "comment": "",
+      "id": 120
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "educacion-religiosa",
+      "term": 1,
+      "evaluation": 1,
+      "score": 18,
+      "comment": "",
+      "id": 121
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "educacion-religiosa",
+      "term": 1,
+      "evaluation": 2,
+      "score": 17,
+      "comment": "",
+      "id": 122
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "educacion-religiosa",
+      "term": 1,
+      "evaluation": 3,
+      "score": 16,
+      "comment": "",
+      "id": 123
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "educacion-religiosa",
+      "term": 1,
+      "evaluation": 4,
+      "score": 18,
+      "comment": "",
+      "id": 124
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "tutoria",
+      "term": 1,
+      "evaluation": 1,
+      "score": 14,
+      "comment": "",
+      "id": 125
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "tutoria",
+      "term": 1,
+      "evaluation": 2,
+      "score": 15,
+      "comment": "",
+      "id": 126
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "tutoria",
+      "term": 1,
+      "evaluation": 3,
+      "score": 15,
+      "comment": "",
+      "id": 127
+    },
+    {
+      "studentDni": "82345601",
+      "courseId": "tutoria",
+      "term": 1,
+      "evaluation": 4,
+      "score": 14,
+      "comment": "",
+      "id": 128
     }
   ],
   "schedules": [
