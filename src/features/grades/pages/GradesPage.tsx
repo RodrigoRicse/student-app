@@ -20,6 +20,8 @@ interface EvalState {
 
 type CourseEvalState = Record<EvalNumber, EvalState>;
 
+const EVAL_NUMBERS: EvalNumber[] = [1, 2, 3, 4];
+
 export function GradesPage() {
   const { user } = useAuth();
   const isDocente = user?.role === "DOCENTE";
@@ -37,8 +39,7 @@ export function GradesPage() {
   const [gradeFilter, setGradeFilter] = useState<string>("");
   const [sectionFilter, setSectionFilter] = useState<string>("");
   const [evalsByCourse, setEvalsByCourse] = useState<Record<string, CourseEvalState>>({});
-
-  const evalNumbers: EvalNumber[] = [1, 2, 3, 4];
+  const evalNumbers = EVAL_NUMBERS;
 
   const teacherDni = user?.teacherDni;
 
@@ -115,10 +116,8 @@ export function GradesPage() {
     );
 
     const next: Record<string, CourseEvalState> = {};
-    const evalNumbers: EvalNumber[] = [1, 2, 3, 4];
-
     studentCourses.forEach((courseId) => {
-      next[courseId] = evalNumbers.reduce<CourseEvalState>((acc, ev) => {
+      next[courseId] = EVAL_NUMBERS.reduce<CourseEvalState>((acc, ev) => {
         const found = relevantGrades.find((g) => g.courseId === courseId && g.evaluation === ev);
         acc[ev] = {
           id: found?.id,
@@ -155,7 +154,7 @@ export function GradesPage() {
     studentCourses.forEach((courseId) => {
       const evals = evalsByCourse[courseId];
       if (!evals) return;
-      evalNumbers.forEach((ev) => {
+      EVAL_NUMBERS.forEach((ev) => {
         const score = Number(evals[ev]?.score);
         if (!Number.isNaN(score)) allScores.push(score);
       });
@@ -163,7 +162,7 @@ export function GradesPage() {
     if (!allScores.length) return "-";
     const avg = allScores.reduce((a, b) => a + b, 0) / allScores.length;
     return avg.toFixed(1);
-  }, [studentCourses, evalsByCourse, evalNumbers]);
+  }, [studentCourses, evalsByCourse]);
 
   const handleScoreChange = (courseId: string, evaluation: EvalNumber, value: string) => {
     const safeValue = value === "" ? "" : Math.max(0, Math.min(20, Number(value) || 0)).toString();
@@ -197,14 +196,13 @@ export function GradesPage() {
     setSaving(true);
 
     try {
-      const evalNumbers: EvalNumber[] = [1, 2, 3, 4];
       const ops: Array<Promise<Grade>> = [];
 
       studentCourses.forEach((courseId) => {
         const evals = evalsByCourse[courseId];
         if (!evals) return;
 
-        evalNumbers.forEach((ev) => {
+        EVAL_NUMBERS.forEach((ev) => {
           const entry = evals[ev];
           if (!entry || entry.score === "") return;
 

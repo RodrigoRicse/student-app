@@ -1,21 +1,16 @@
-import { createContext, useState, type ReactNode } from "react";
-import type { User } from "../types/User";
+import { useState, type ReactNode } from "react";
 import { authService } from "../services/authService";
+import type { AuthContextValue } from "./AuthContext";
+import { AuthContext } from "./AuthContext";
 
-export interface AuthContextValue {
-  user: User | null;
-  token: string | null;
-  loading: boolean;
-  login: (email: string, password: string) => Promise<void>;
-  logout: () => void;
+interface Props {
+  children: ReactNode;
 }
 
-export const AuthContext = createContext<AuthContextValue | undefined>(undefined);
-
-export function AuthProvider({ children }: { children: ReactNode }) {
+export function AuthProvider({ children }: Props) {
   // Inicializa desde storage; sin useEffect para evitar setState en efecto
-  const [user, setUser] = useState<User | null>(() => authService.getStoredUser());
-  const [token, setToken] = useState<string | null>(() => authService.getToken());
+  const [user, setUser] = useState<AuthContextValue["user"]>(() => authService.getStoredUser());
+  const [token, setToken] = useState<AuthContextValue["token"]>(() => authService.getToken());
   const [loading] = useState(false);
 
   const login = async (email: string, password: string) => {

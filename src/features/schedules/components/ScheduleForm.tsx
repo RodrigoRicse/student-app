@@ -110,7 +110,7 @@ export function ScheduleForm({ initialSchedule, teachers, courses, onSaved }: Sc
     }
 
     prevTeacherForCourses.current = teacher.dni;
-  }, [form.teacherDni, teachers, activeCourses, isEditing, initialSchedule?.teacherDni]);
+  }, [form.teacherDni, form.courses.length, teachers, activeCourses, isEditing, initialSchedule?.teacherDni]);
 
   // Limpia selecciones que ya no sean cursos activos
   useEffect(() => {

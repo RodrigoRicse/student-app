@@ -10,9 +10,9 @@ interface StudentFormProps {
 
 const LEVEL = "Primaria";
 const GRADES = [1, 2, 3, 4, 5, 6];
-const SECTIONS_BY_SHIFT = {
-  MANANA: ["A", "B"] as const,
-  TARDE: ["C", "D"] as const,
+const SECTIONS_BY_SHIFT: Record<Student["shift"], Array<Student["section"]>> = {
+  MANANA: ["A", "B"],
+  TARDE: ["C", "D"],
 };
 const SHIFTS = [
   { value: "MANANA", label: "Manana" },

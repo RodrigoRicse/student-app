@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSchedules } from "../hooks/useSchedules";
 import { ScheduleForm } from "../components/ScheduleForm";
 import { ScheduleTable } from "../components/ScheduleTable";
@@ -13,14 +13,6 @@ export function SchedulesPage() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
   const selectedSchedule = schedules.find((s) => s.id === selectedId) ?? null;
-
-  useEffect(() => {
-    if (!selectedSchedule) return;
-  // si se borra, limpiamos seleccion
-    if (!schedules.find((s) => s.id === selectedId)) {
-      setSelectedId(null);
-    }
-  }, [schedules, selectedId, selectedSchedule]);
 
   const handleDelete = async (id: string) => {
     if (!confirm("Eliminar horario?")) return;
